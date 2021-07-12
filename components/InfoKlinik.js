@@ -1,4 +1,5 @@
 import React from "react";
+import CardButton from "./CardButton";
 
 const InfoKlinik = () => {
   return (
@@ -11,6 +12,11 @@ const InfoKlinik = () => {
         <h2 className="absolute top-1/2 left-1/2 font-semibold transform -translate-x-1/2 -translate-y-1/2">
           Info Klinik
         </h2>
+      </div>
+      <div className="grid grid-flow-row md:grid-flow-col gap-y-12 justify-evenly w-full lg:w-3/4 lg:mx-auto">
+        <CardButton text="Staf" />
+        <CardButton text="Fasilitas" />
+        <CardButton text="Profil Klinik" />
       </div>
     </section>
   );
