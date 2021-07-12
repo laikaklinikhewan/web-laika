@@ -3,13 +3,13 @@ import CardButton from "./CardButton";
 
 const InfoKlinik = () => {
   return (
-    <section>
-      <div className="h-24 relative w-48 mx-auto">
+    <section className="bg-pink-200">
+      <div className="h-32 relative w-64 mx-auto mb-8">
         <div
           className="w-full h-full filter drop-shadow-lg bg-auto bg-no-repeat"
           style={{ backgroundImage: "url(/assets/bone-bg.svg)" }}
         ></div>
-        <h2 className="absolute top-1/2 left-1/2 font-semibold transform -translate-x-1/2 -translate-y-1/2">
+        <h2 className="text-2xl absolute top-1/2 left-1/2 font-semibold transform -translate-x-1/2 -translate-y-1/2">
           Info Klinik
         </h2>
       </div>

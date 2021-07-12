@@ -8,11 +8,11 @@ const CardButton = ({ bgImgUrl, urlTo, text }) => {
   return (
     <a
       href="#"
-      className={`relative h-80 w-56 bg-gradient-to-t from-black transition-all duration-500 bg-no-repeat rounded-3xl overflow-hidden ${styles.cardButton}`}
+      className={`relative h-80 w-56 rounded-3xl overflow-hidden bg-bottom bg-cover`}
+      style={{ backgroundImage: `url(${temp_bgImgUrl})` }}
     >
       <div
-        className={`relative w-full h-full bg-bottom bg-cover justify-center ${styles.cardBg}`}
-        style={{ backgroundImage: `url(${temp_bgImgUrl})` }}
+        className={`w-full h-full justify-center bg-gradient-to-t bg-no-repeat from-black transition-all duration-500 ${styles.cardButton}`}
       ></div>
       <p className="text-2xl text-center absolute left-1/2 bottom-4 transform -translate-x-1/2 z-10 text-white">
         {text}
