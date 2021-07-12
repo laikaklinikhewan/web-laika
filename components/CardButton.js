@@ -14,7 +14,7 @@ const CardButton = ({ bgImgUrl, urlTo, text }) => {
         className={`relative w-full h-full bg-bottom bg-cover justify-center ${styles.cardBg}`}
         style={{ backgroundImage: `url(${temp_bgImgUrl})` }}
       ></div>
-      <p className="text-xl text-center absolute left-1/2 bottom-2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white">
+      <p className="text-2xl text-center absolute left-1/2 bottom-4 transform -translate-x-1/2 z-10 text-white">
         {text}
       </p>
     </a>
