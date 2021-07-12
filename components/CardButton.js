@@ -6,14 +6,18 @@ const CardButton = ({ bgImgUrl, urlTo, text }) => {
   let temp_bgImgUrl = "/assets/lobi.jpeg";
   console.log(styles.cardButton);
   return (
-    <div
-      className={`h-80 w-56 z-auto bg-gradient-to-t from-black transition-all duration-500 bg-no-repeat ${styles.cardButton}`}
+    <a
+      href="#"
+      className={`relative h-80 w-56 bg-gradient-to-t from-black transition-all duration-500 bg-no-repeat rounded-3xl overflow-hidden ${styles.cardButton}`}
     >
       <div
-        className={`relative w-full h-full bg-bottom bg-cover ${styles.cardBg}`}
+        className={`relative w-full h-full bg-bottom bg-cover justify-center ${styles.cardBg}`}
         style={{ backgroundImage: `url(${temp_bgImgUrl})` }}
       ></div>
-    </div>
+      <p className="text-xl text-center absolute left-1/2 bottom-2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white">
+        {text}
+      </p>
+    </a>
   );
 };
 
