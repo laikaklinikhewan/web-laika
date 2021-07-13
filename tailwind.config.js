@@ -6,27 +6,31 @@ module.exports = {
       js:['Josefin Sans']
     },
     fontSize:{
-      base:['1.249vw'],
-      sm:['0.972vw']
+      base:['18px'],
+      sm:['14px']
     },
     textColor:{
       'media':'#c0c0c0'
     },
     extend: {},
     height: {
-      nav: '9.785vw',
-      logo: '6.731vw',
-      info: '30px',
-      home: '32px'
+      nav: '141px',
+      logo: '100px'
+    },
+    height:{
+      ig: '23px',
+      mail: '20px'
     },
     width: {
-      logo: '6.731vw',
-      screen: '100vw'
+      logo: '100px',
+      screen: '100vw',
+      ig: '23px',
+      mail: '20px'
     },
     margin: {
       xnav: '8.119vw',
-      ynav: '1.654vw',
-      xmenu: '7.275vw'
+      ynav: '30px',
+      xmenu: '139.68px'
     }
   },
   variants: {
