@@ -16,11 +16,17 @@ const InfoKlinik = () => {
           Info Klinik
         </h2>
       </div>
-      <div className="grid grid-flow-row md:grid-flow-col gap-y-12 justify-evenly w-full lg:w-3/4 lg:mx-auto">
-        <CardButton text="Staf" />
-        <CardButton text="Fasilitas" />
-        <CardButton text="Profil Klinik" />
-      </div>
+      <ul className="grid grid-flow-row md:grid-flow-col gap-y-12 justify-evenly w-full lg:w-3/4 lg:mx-auto">
+        <li className="grid">
+          <CardButton text="Staf" />
+        </li>
+        <li className="grid">
+          <CardButton text="Fasilitas" />
+        </li>
+        <li className="grid">
+          <CardButton text="Profil Klinik" />
+        </li>
+      </ul>
     </section>
   );
 };
