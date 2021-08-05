@@ -19,7 +19,7 @@ export default function Facilities() {
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
     >
       <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex">
-        <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:72 flex-shrink-0">
+        <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:h-72 flex-shrink-0">
           <Image
             src={activeCard.imgUrl}
             alt={activeCard.alt}
