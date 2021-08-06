@@ -6,8 +6,8 @@ const IndexHero = () => {
   return (
     <>
       <section
-        className="w-100 h-96 lg:h-screen bg-no-repeat bg-cover bg-right-bottom"
-        style={{ backgroundImage: "url(/assets/bg-index.png)" }}
+        className="w-100 h-100 lg:h-screen bg-no-repeat bg-cover bg-right-bottom"
+        style={{ backgroundImage: "url(/assets/bg-index.jpg)" }}
       >
         <div className="md:w-2/3 lg:w-2/6 ml-4 md:ml-20 text-white flex flex-col justify-center h-full">
           <h1 className="text-2xl md:text-3xl lg:text-4xl">
