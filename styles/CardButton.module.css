@@ -1,0 +1,11 @@
+.cardButton:hover {
+  background-position-y: 15rem;
+}
+
+.cardButton {
+  background-position-y: 7rem;
+}
+
+.cardBg {
+  z-index: -1;
+}
