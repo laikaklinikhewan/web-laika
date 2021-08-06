@@ -10,7 +10,7 @@ const IndexHero = () => {
         style={{ backgroundImage: "url(/assets/bg-index.jpg)" }}
       >
         <div className="md:w-2/3 lg:w-2/6 ml-4 md:ml-20 text-white flex flex-col justify-center h-full">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl mt-32">
             Welcome to<br></br>
             <span className="text-3xl md:text-4xl lg:text-5xl inline-block mt-4 italic font-semibold">
               Laika Petshop and Veterinary Service
