@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <MainNavbar/>
-      <PinkNavbar listButton={dummyLinks}/>
+      {/* <PinkNavbar listButton={dummyLinks}/> */}
       <IndexHero />
       <InfoKlinik />
       <JamPraktek />
