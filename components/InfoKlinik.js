@@ -5,7 +5,7 @@ const InfoKlinik = () => {
   return (
     <section
       className="bg-pink-200 bg-cover py-12"
-      style={{ backgroundImage: "url(/assets/bck-with-paw3.png" }}
+      style={{ backgroundImage: "url(/assets/bck-with-paw4.png" }}
     >
       <div className="h-32 relative w-64 mx-auto mb-8">
         <div

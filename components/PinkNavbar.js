@@ -6,7 +6,7 @@ const PinkNavbar = ({listButton}) => {
   const [activeLink, setActiveLink] = useState(0);
 
   return (
-    <div className="relative h-40 w-screen bg-pinkHeader bg-cover flex items-center">
+    <div className="relative h-40 w-100 bg-pinkHeader bg-cover flex items-center">
       <div className="w-logo h-logo ml-xnav mr-12 my-ynav self-center">
           <Image src="/assets/LOGO.png" alt="Laika" width="100px" height="100px" layout="fixed"/>
       </div>

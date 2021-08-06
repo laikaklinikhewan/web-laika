@@ -12,7 +12,7 @@ const MainNavbar = () => {
     
     const [activeSect, setActiveSect] = useState(3);
     return (
-        <div className='flex justify-between h-40 max-w-8xl w-screen shadow-lg text-base inline-flex'>
+        <div className='flex justify-between h-40 max-w-8xl w-100 shadow-lg text-base inline-flex'>
             <div className="w-logo h-logo mx-xnav my-ynav self-center">
                 <Image src="/assets/LOGO.png" alt="Laika" width="100px" height="100px" layout="fixed"/>
             </div>

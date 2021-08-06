@@ -1,7 +1,6 @@
 
 import MainNavbar from '../components/MainNavbar'
 import PinkNavbar from '../components/PinkNavbar'
-import styles from '../styles/Home.module.css'
 import IndexHero from "../components/IndexHero";
 import InfoKlinik from "../components/InfoKlinik";
 import JamPraktek from "../components/JamPraktek";
@@ -14,7 +13,7 @@ export default function Home() {
     { text: "Paramedis", linkUrl: "/paramedis" }
   ];
   return (
-    <div className={styles.container}>
+    <>
       <MainNavbar/>
       <PinkNavbar listButton={dummyLinks}/>
       <IndexHero />
@@ -22,6 +21,6 @@ export default function Home() {
       <JamPraktek />
       <HomeArticles />
       <Footer />
-    </div>
+    </>
   )
 }
