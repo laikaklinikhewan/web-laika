@@ -2,7 +2,7 @@ const Footer = () => {
   const alamat =
     "Jalan Tegar Beriman Ruko Cibinong City Center E20, Pakansari, Cibinong, Bogor, West Java";
   return (
-    <footer className="py-4 md:py-0 bg-black w-full px-16 text-white m-0">
+    <footer className="grid py-4 md:py-0 bg-black w-full px-16 text-white m-0">
       <p className="md:hidden text-sm mb-8">{alamat}</p>
       <div className="flex justify-between">
         <div className="flex md:w-2/4 lg:w-2/6">
