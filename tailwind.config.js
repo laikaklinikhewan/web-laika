@@ -32,7 +32,7 @@ module.exports = {
       height: {
         nav: '141px',
         pinknav: '126px',
-        logo: '100px',
+        logo: '65px',
         ig: '23px',
         igt: '16px',
         mail: '20px',
@@ -41,7 +41,7 @@ module.exports = {
         '38': '9.5rem'
       },
       width: {
-        logo: '100px',
+        logo: '65px',
         ig: '23px',
         igt:'16px',
         mail: '20px',
@@ -51,7 +51,7 @@ module.exports = {
       },
       margin: {
         xnav: '8.119vw',
-        ynav: '30px',
+        ynav: '22px',
         xnavmin: '7vw',
         xmenu: '139.68px'
       },
