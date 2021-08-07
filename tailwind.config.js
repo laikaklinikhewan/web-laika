@@ -8,7 +8,8 @@ module.exports = {
       }),
       backgroundColor: theme => ({
         ...theme('colors'),
-        'button': '#FFE4B1'
+        'button': '#FFE4B1',
+        'staf':'#FFEAEA'
       }),
       backgroundSize: {
         'screen': '100vw',
@@ -21,7 +22,8 @@ module.exports = {
         button:['24px']
       },
       textColor:{
-        'media':'#c0c0c0'
+        'media':'#c0c0c0',
+        'mediaHover': '#8e1e74'
       },
       boxShadow: {
         'roundBtn': 'inset 0px 6px 2px rgba(0, 0, 0, 0.3);'
@@ -38,7 +40,9 @@ module.exports = {
         mail: '20px',
         mailt: '15px',
         button: '54px',
-        '38': '9.5rem'
+        '38': '9.5rem',
+        photo: '240px',
+        cover: '100vw'
       },
       width: {
         logo: '65px',
@@ -47,7 +51,8 @@ module.exports = {
         mail: '20px',
         mailt: '15px',
         button: '166px',
-        tbutton: '140px'
+        tbutton: '140px',
+        photo: '180px'
       },
       margin: {
         xnav: '8.119vw',
@@ -61,7 +66,8 @@ module.exports = {
       }
     },
     fontFamily:{
-      js:['Josefin Sans']
+      'js':['"Josefin Sans"'],
+      'ls':['"Londrina Solid"']
     },
   },
   variants: {
