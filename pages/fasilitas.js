@@ -15,7 +15,7 @@ export default function Facilities() {
 
   return (
     <main
-      className="bg-white bg-contain min-h-screen"
+      className="bg-white min-h-screen"
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
     >
       <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex">
