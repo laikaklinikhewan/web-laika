@@ -1,7 +1,7 @@
 import React from 'react'
-import PinkNavbar from './PinkNavbar'
+import PinkNavbar from '../components/PinkNavbar'
 import Image from 'next/image'
-import Footer from './Footer'
+import Footer from '../components/Footer'
 
 const Staff = () => {
     const staffList = [
