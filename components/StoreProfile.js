@@ -4,7 +4,7 @@ import ProfileSlider from "./ProfileSlider";
 const StoreProfile = () => {
   return (
     <main
-      className="bg-gray-200 bg-contain"
+      className="bg-gray-200"
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
     >
       <ProfileSlider />
