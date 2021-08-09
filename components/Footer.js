@@ -13,7 +13,7 @@ const Footer = () => {
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="fill-current w-8 h-8"
+              className="fill-current hover:text-mediaHover w-8 h-8"
               viewBox="0 0 40 40"
             >
               <g clipPath="url(#clip0)">
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="flex flex-row-reverse my-auto">
           <a href="https://api.whatsapp.com/send?phone=6281318611295&text=Halo%20Admin%20Saya%20Mau%20tanya%20tanya">
             <svg
-              className="fill-current"
+              className="fill-current hover:text-mediaHover"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -44,7 +44,7 @@ const Footer = () => {
             href="https://www.instagram.com/laikaklinikhewan/"
           >
             <svg
-              className="fill-current"
+              className="fill-current hover:text-mediaHover"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"

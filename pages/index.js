@@ -6,6 +6,7 @@ import InfoKlinik from "../components/InfoKlinik";
 import JamPraktek from "../components/JamPraktek";
 import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
+import Staff from '../components/Staff';
 
 export default function Home() {
   const dummyLinks = [
@@ -14,13 +15,14 @@ export default function Home() {
   ];
   return (
     <>
-      <MainNavbar/>
+      {/* <MainNavbar/> */}
       {/* <PinkNavbar listButton={dummyLinks}/> */}
-      <IndexHero />
-      <InfoKlinik />
-      <JamPraktek />
-      <HomeArticles />
-      <Footer />
+      {/* <IndexHero /> */}
+      {/* <InfoKlinik /> */}
+      {/* <JamPraktek /> */}
+      {/* <HomeArticles /> */}
+      <Staff/>
+      {/* <Footer /> */}
     </>
   )
 }
