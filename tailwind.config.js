@@ -2,9 +2,15 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    borderColor: theme => ({
+      ...theme('colors'),
+      DEFAULT: theme('colors.gray.300', 'currentColor'),
+      'article': '#C600A6'
+    }),
     extend: {
       backgroundImage: theme => ({
-        'pinkHeader': "url('/assets/PinkHeader.png')"
+        'pinkHeader': "url('/assets/PinkHeader.png')",
+        'article': "url('/assets/bck2.png')"
       }),
       backgroundColor: theme => ({
         ...theme('colors'),
@@ -52,7 +58,10 @@ module.exports = {
         mailt: '15px',
         button: '166px',
         tbutton: '140px',
-        photo: '180px'
+        photo: '180px',
+        artNav: '85vw',
+        artPrev: '70vw',
+        dividerArt: '75%'
       },
       margin: {
         xnav: '8.119vw',
@@ -63,6 +72,10 @@ module.exports = {
       padding: {
         button: '13px',
         tbutton: '11px'
+      },
+      inset: {
+        'tight': '65%',
+        '0%': '0%'
       }
     },
     fontFamily:{
