@@ -27,7 +27,7 @@ const ProfileSlider = () => {
       >
         {sliderImages.map((slide, index) => (
           <SwiperSlide tag="li" key={index} className="h-full">
-            <div style={{ height: 550 }}>
+            <div style={{ height: 450 }}>
               <Image
                 src={slide.imgUrl}
                 alt={slide.alt}
