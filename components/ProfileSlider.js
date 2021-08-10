@@ -3,7 +3,7 @@ import Image from "next/image";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-SwiperCore.use(Pagination, Navigation);
+SwiperCore.use([Pagination, Navigation]);
 
 const sliderImages = [
   { imgUrl: "/assets/lobi.jpeg", alt: "gambar lobi" },
@@ -27,7 +27,7 @@ const ProfileSlider = () => {
       >
         {sliderImages.map((slide, index) => (
           <SwiperSlide tag="li" key={index} className="h-full">
-            <div style={{ height: 550 }}>
+            <div style={{ height: 450 }}>
               <Image
                 src={slide.imgUrl}
                 alt={slide.alt}
