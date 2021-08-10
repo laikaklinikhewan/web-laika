@@ -11,7 +11,7 @@ const JamPraktek = (props) => {
     },
   ];
   return (
-    <section className="relative h-auto overflow-hidden">
+    <section className="relative h-auto overflow-hidden" id="jam">
       <div
         className="bg-cover bg-bottom absolute z-0 top-0 left-0 w-full h-full filter blur-sm"
         style={{ backgroundImage: "url(/assets/lobi.jpeg)" }}
