@@ -31,6 +31,7 @@ const HomeArticles = (props) => {
     <section
       className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain"
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
+      id="artikel"
     >
       <h2 className="text-2xl text-pink-700 font-bold mb-2 text-center md:text-left">
         Artikel
@@ -48,7 +49,7 @@ const HomeArticles = (props) => {
         <li className="transform hover:scale-105 transition">
           <ArticlePreview></ArticlePreview>
         </li>
-        <Link href="#">
+        <Link href="/artikel">
           <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
@@ -71,7 +72,7 @@ const HomeArticles = (props) => {
         <li className="transform hover:scale-105 transition">
           <ArticlePreview></ArticlePreview>
         </li>
-        <Link href="#">
+        <Link href="/artikel">
           <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>

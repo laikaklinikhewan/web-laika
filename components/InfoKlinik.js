@@ -6,6 +6,7 @@ const InfoKlinik = () => {
     <section
       className="bg-pink-200 bg-cover py-12"
       style={{ backgroundImage: "url(/assets/bck-with-paw4.png" }}
+      id="info"
     >
       <div className="h-32 relative w-64 mx-auto mb-8">
         <div
@@ -18,13 +19,25 @@ const InfoKlinik = () => {
       </div>
       <ul className="grid grid-flow-row md:grid-flow-col gap-y-12 justify-evenly w-full lg:w-3/4 lg:mx-auto">
         <li className="grid">
-          <CardButton text="Staf" />
+          <CardButton
+            text="Staf"
+            bgImgUrl="/assets/doctors.jpg"
+            urlTo="/staf"
+          />
         </li>
         <li className="grid">
-          <CardButton text="Fasilitas" />
+          <CardButton
+            text="Fasilitas"
+            bgImgUrl="/assets/usg.jpeg"
+            urlTo="/fasilitas"
+          />
         </li>
         <li className="grid">
-          <CardButton text="Profil Klinik" />
+          <CardButton
+            text="Profil Klinik"
+            bgImgUrl="/assets/nonblur.jpg"
+            urlTo="/profil"
+          />
         </li>
       </ul>
     </section>
