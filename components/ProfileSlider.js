@@ -3,7 +3,7 @@ import Image from "next/image";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-SwiperCore.use(Pagination, Navigation);
+SwiperCore.use([Pagination, Navigation]);
 
 const sliderImages = [
   { imgUrl: "/assets/lobi.jpeg", alt: "gambar lobi" },
