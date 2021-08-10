@@ -25,7 +25,9 @@ module.exports = {
         base:['18px'],
         sm:['14px'],
         tn:['10px'],
-        button:['24px']
+        button:['24px'],
+        title:['56px'],
+        content:['20px']
       },
       textColor:{
         'media':'#c0c0c0',
@@ -61,7 +63,8 @@ module.exports = {
         photo: '180px',
         artNav: '85vw',
         artPrev: '70vw',
-        dividerArt: '75%'
+        dividerArt: '75%',
+        viewArt: '60%'
       },
       margin: {
         xnav: '8.119vw',
