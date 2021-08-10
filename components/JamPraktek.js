@@ -16,14 +16,14 @@ const JamPraktek = (props) => {
         className="bg-cover bg-bottom absolute z-0 top-0 left-0 w-full h-full filter blur-sm"
         style={{ backgroundImage: "url(/assets/lobi.jpeg)" }}
       ></div>
-      <div className="flex flex-col justify-center relative z-10 ml-24 my-32 h-full w-1/2 text-shadow-sm">
-        <h2 className="text-5xl font-bold text-white mb-12 text-outline">
+      <div className="flex flex-col justify-center relative z-10 ml-24 my-32 h-full w-1/2">
+        <h2 className="text-5xl font-bold text-white mb-12 text-outline textOutlineThick">
           Jam Praktek
         </h2>
         <ul className="text-white text-3xl paw-list">
           {jamPraktek.map((jadwal, idx) => (
             <li key={idx} className="mb-4">
-              <p className="font-bold">{jadwal.hari}</p>
+              <p className="font-bold textOutline">{jadwal.hari}</p>
               {jadwal.jam.map((jam, idx2) => (
                 <p key={idx2} className="font-light">
                   {jam}
