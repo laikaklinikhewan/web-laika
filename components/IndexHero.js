@@ -6,7 +6,7 @@ const IndexHero = () => {
   return (
     <>
       <section
-        className="w-100 h-100 lg:h-screen bg-no-repeat bg-cover bg-right-bottom"
+        className="w-100 h-100 lg:h-screen bg-no-repeat bg-cover bg-bottom lg:bg-right-bottom py-32 lg:pb-auto"
         style={{ backgroundImage: "url(/assets/bg-index.jpg)" }}
         id="hero"
       >

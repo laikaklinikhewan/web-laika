@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ArticlePreview from "./ArticlePreview";
 import Link from "next/link";
 
-const HomeArticles = (props) => {
+const HomeArticles = ({ articles, announcements }) => {
   const arrow = (
     <svg width="55" height="55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -36,21 +36,23 @@ const HomeArticles = (props) => {
       <h2 className="text-2xl text-pink-700 font-bold mb-2 text-center md:text-left">
         Artikel
       </h2>
-      <ul className="relative flex flex-wrap flex-col items-center md:flex-row justify-between">
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
+      <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
+        {articles.map((article, index) => (
+          <li key={index} className="transform hover:scale-105 transition">
+            <ArticlePreview
+              title={article.title}
+              date={article.date}
+              slug={article.slug}
+              imgUrl={
+                article.featuredImage
+                  ? article.featuredImage.node.mediaItemUrl
+                  : undefined
+              }
+            ></ArticlePreview>
+          </li>
+        ))}
         <Link href="/artikel">
-          <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
+          <a className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
           </a>
@@ -59,21 +61,23 @@ const HomeArticles = (props) => {
       <h2 className="text-2xl text-pink-700 font-bold mb-2 mt-8 text-center md:text-left">
         Pengumuman
       </h2>
-      <ul className="relative flex flex-wrap flex-col items-center md:flex-row justify-between">
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
-        <li className="transform hover:scale-105 transition">
-          <ArticlePreview></ArticlePreview>
-        </li>
+      <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
+        {announcements.map((article, index) => (
+          <li key={index} className="transform hover:scale-105 transition">
+            <ArticlePreview
+              title={article.title}
+              date={article.date}
+              slug={article.slug}
+              imgUrl={
+                article.featuredImage
+                  ? article.featuredImage.node.mediaItemUrl
+                  : undefined
+              }
+            ></ArticlePreview>
+          </li>
+        ))}
         <Link href="/artikel">
-          <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
+          <a className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
           </a>
