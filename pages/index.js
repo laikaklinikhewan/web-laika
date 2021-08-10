@@ -7,13 +7,14 @@ import JamPraktek from "../components/JamPraktek";
 import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
 import ArticleMore from './artikel';
-import ArticleView from './artikel/ArticleView';
+import ArticleView from './artikel/[slug]';
 
 export default function Home() {
   const dummyLinks = [
     { text: "Dokter", linkUrl: "/dokter" },
     { text: "Paramedis", linkUrl: "/paramedis" }
   ];
+
   return (
     <>
       {/* <MainNavbar/> */}
@@ -28,3 +29,4 @@ export default function Home() {
     </>
   )
 }
+
