@@ -49,7 +49,7 @@ const HomeArticles = (props) => {
         <li className="transform hover:scale-105 transition">
           <ArticlePreview></ArticlePreview>
         </li>
-        <Link href="#">
+        <Link href="/artikel">
           <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
@@ -72,7 +72,7 @@ const HomeArticles = (props) => {
         <li className="transform hover:scale-105 transition">
           <ArticlePreview></ArticlePreview>
         </li>
-        <Link href="#">
+        <Link href="/artikel">
           <a className="mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
