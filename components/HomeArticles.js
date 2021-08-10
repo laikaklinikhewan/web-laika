@@ -31,6 +31,7 @@ const HomeArticles = (props) => {
     <section
       className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain"
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
+      id="artikel"
     >
       <h2 className="text-2xl text-pink-700 font-bold mb-2 text-center md:text-left">
         Artikel
