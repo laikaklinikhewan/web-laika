@@ -24,6 +24,10 @@ a {
   list-style: url(/icons/paw.svg);
 }
 
+.paw-comment {
+  list-style: url(/icons/PawPurple.svg);
+}
+
 .text-shadow-sm {
   text-shadow: 1px 1px 2px black;
 }
