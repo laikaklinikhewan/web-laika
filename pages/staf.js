@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PinkNavbar from "../components/PinkNavbar";
 import Image from "next/image";
 import Footer from "../components/Footer";
+import { getStaffs } from "../lib/wordpress";
 
 const StaffListItem = ({ photoUrl, name, desc }) => {
   return (
@@ -27,8 +28,13 @@ const StaffListItem = ({ photoUrl, name, desc }) => {
   );
 };
 
-const Staff = () => {
+export default function Staff({ doctors, paramedics }) {
   const [activePage, setActivePage] = useState(0);
+
+  const pageList = [
+    { text: "Dokter", linkUrl: "#" },
+    { text: "Paramedis", linkUrl: "#" },
+  ];
 
   return (
     <main className="min-h-screen w-full bg-staf">
@@ -40,9 +46,13 @@ const Staff = () => {
               {doctors.map((doctor, index) => (
                 <li key={index}>
                   <StaffListItem
-                    photoUrl={doctor.photoUrl}
-                    name={doctor.name}
-                    desc={doctor.desc}
+                    photoUrl={
+                      doctor.featuredImage
+                        ? doctor.featuredImage.node.mediaItemUrl
+                        : "/assets/doc.png"
+                    }
+                    name={doctor.title}
+                    desc={doctor.content}
                   />
                 </li>
               ))}
@@ -53,9 +63,13 @@ const Staff = () => {
               {paramedics.map((paramedic, index) => (
                 <li key={index}>
                   <StaffListItem
-                    photoUrl={paramedic.photoUrl}
-                    name={paramedic.name}
-                    desc={paramedic.desc}
+                    photoUrl={
+                      paramedic.featuredImage
+                        ? paramedic.featuredImage.node.mediaItemUrl
+                        : "/assets/doc.png"
+                    }
+                    name={paramedic.title}
+                    desc={paramedic.content}
                   />
                 </li>
               ))}
@@ -66,57 +80,8 @@ const Staff = () => {
       <Footer />
     </main>
   );
-};
+}
 
-export default Staff;
-
-const doctors = [
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Dr.Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Dr.Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Dr.Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Dr.Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-];
-
-const paramedics = [
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Paramedis Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Paramedis Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Paramedis Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-  {
-    photoUrl: "/assets/doc.png",
-    name: "Paramedis Eren Jaeger",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget dignissim magna. Aliquam sed neque sollicitudin, euismod magna in, congue est. Sed in molestie risus, eget lobortis neque. Ut molestie nunc libero, sit amet malesuada sapien sagittis ornare. Sed vitae arcu velit. Quisque sit amet orci ultrices, blandit elit quis, mattis quam. Vivamus id sodales tellus, in placerat nunc. Etiam tristique rhoncus libero, et ullamcorper lacus posuere nec. Quisque nulla mi, maximus a tincidunt nec, facilisis vel ante. Donec ante lacus, ornare id massa egestas, venenatis sagittis mi. Donec aliquam vulputate arcu, ac tempus dolor interdum at. ",
-  },
-];
-
-const pageList = [
-  { text: "Dokter", linkUrl: "#" },
-  { text: "Paramedis", linkUrl: "#" },
-];
+export async function getStaticProps() {
+  return { props: await getStaffs() };
+}
