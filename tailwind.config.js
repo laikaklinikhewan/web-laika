@@ -15,7 +15,8 @@ module.exports = {
       backgroundColor: theme => ({
         ...theme('colors'),
         'button': '#FFE4B1',
-        'staf':'#FFEAEA'
+        'staf':'#FFEAEA',
+        'comment':'#FFE9E9'
       }),
       backgroundSize: {
         'screen': '100vw',
@@ -64,7 +65,9 @@ module.exports = {
         artNav: '85vw',
         artPrev: '70vw',
         dividerArt: '75%',
-        viewArt: '60%'
+        viewArt: '60%',
+        commentArt: '80vw',
+        oneComment: '80%'
       },
       margin: {
         xnav: '8.119vw',
