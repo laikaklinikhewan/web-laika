@@ -13,7 +13,7 @@ const InfoKlinik = () => {
           className="w-full h-full filter drop-shadow-lg bg-auto bg-no-repeat"
           style={{ backgroundImage: "url(/assets/bone-bg.svg)" }}
         ></div>
-        <h2 className="text-2xl absolute top-1/2 left-1/2 font-semibold transform -translate-x-1/2 -translate-y-1/2">
+        <h2 className="londrina text-3xl absolute top-1/2 left-1/2 font-semibold transform -translate-x-1/2 -translate-y-1/2">
           Info Klinik
         </h2>
       </div>

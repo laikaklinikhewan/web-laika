@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const CardButton = ({ bgImgUrl, urlTo, text }) => {
   let tempbg = "/assets/lobi.jpeg";
-  console.log(styles.cardButton);
   return (
     <Link href={urlTo || "#"}>
       <a
@@ -15,7 +14,7 @@ const CardButton = ({ bgImgUrl, urlTo, text }) => {
         <div
           className={`w-full h-full justify-center bg-gradient-to-t bg-no-repeat from-black transition-all duration-500 ${styles.cardButton}`}
         ></div>
-        <p className="text-2xl text-center absolute left-1/2 bottom-4 transform -translate-x-1/2 z-10 text-white">
+        <p className="font-light text-3xl text-center absolute left-1/2 bottom-4 transform -translate-x-1/2 z-10 text-white">
           {text || "lorem ipsum"}
         </p>
       </a>
