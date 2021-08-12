@@ -8,12 +8,13 @@ import Image from 'next/image'
 const ArticleView = (data) => {
     const articleData = data.content.post
     let date = ISOtoDate(articleData.date)
+    const fixedContent = articleData.content.replace(/(\n\n\n)/gm, "")
 
     const article = {
         title: articleData.title, 
         imageUrl: articleData.featuredImage.node.sourceUrl,
         date: date, 
-        content: articleData.content
+        content: fixedContent
     }
 
     const comments = [
@@ -39,8 +40,7 @@ const ArticleView = (data) => {
                 <div>
                     <Image src={article.imageUrl} alt="" height="540" width="960"/>
                 </div>
-                <div className="mt-8 text-justify mb-40 text-content whitespace-pre-line block" dangerouslySetInnerHTML={{__html: article.content}}>
-                    {/* <p >{article.content}</p> */}
+                <div className="mt-8 text-justify mb-8 text-content whitespace-pre-line" dangerouslySetInnerHTML={{__html: article.content}}>
                 </div>
             </div>
             <div className="w-commentArt bg-comment opacity-70 mb-36">
