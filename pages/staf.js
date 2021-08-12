@@ -37,8 +37,8 @@ export default function Staff({ doctors, paramedics }) {
   ];
 
   return (
-    <main className="min-h-screen w-full bg-staf">
-      <div>
+    <main>
+      <div className="min-h-screen w-full bg-staf">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
         <div>
           {

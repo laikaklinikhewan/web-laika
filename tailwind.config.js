@@ -28,7 +28,7 @@ module.exports = {
         tn:['10px'],
         button:['24px'],
         title:['56px'],
-        content:['20px']
+        content:['18px']
       },
       textColor:{
         'media':'#c0c0c0',

@@ -1,10 +1,20 @@
 import React from 'react'
 import OneComment from '../../components/OneComment'
+import { getArticlePaths, getOnePageContent } from '../../lib/wordpress'
+import ISOtoDate from '../../lib/ISOtoDate'
+import Footer from '../../components/Footer'
 import Image from 'next/image'
 
 const ArticleView = (data) => {
+    const articleData = data.content.post
+    let date = ISOtoDate(articleData.date)
+    const fixedContent = articleData.content.replace(/(\n\n\n)/gm, "")
+
     const article = {
-        title:"Lorem ipsum dolor sit amet consectetur adipisicing.", imageUrl: "/assets/two-dogs-playing-tug-of-war-with-disc.jpg" ,date:"dd/mm/yyyy HH:MM WIB", content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet congue lectus. Suspendisse sem sem, accumsan vitae accumsan a, dictum at tellus. Sed semper at odio vitae condimentum. Integer et elementum eros. Nunc sem eros, vestibulum id eleifend ac, gravida ultricies odio. Nunc tempor massa sit amet mi mollis convallis. Suspendisse ut mi a nisi condimentum pharetra. Nulla facilisi.Quisque aliquet ipsum ac mauris lobortis viverra. Nullam vulputate leo id ante venenatis faucibus. Donec id enim eu justo dignissim commodo at ut nibh. Phasellus ut lacinia massa. Suspendisse potenti. Curabitur sem urna, varius vel eleifend sed, gravida vel felis. Sed convallis neque nec orci consectetur, eget bibendum leo laoreet. Donec in suscipit risus. Donec quis diam urna. Aliquam erat volutpat. Phasellus pretium urna magna, facilisis fermentum elit posuere ac. Praesent consectetur orci rhoncus erat egestas consectetur. Praesent lobortis sit amet eros quis ultrices. Ut convallis, libero a dictum aliquet, eros sem tempus justo, eu tempor nunc tortor non ante. Praesent vitae consequat massa, sed aliquet velit. Ut vitae augue mattis, cursus eros et, tempor mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed gravida porta lectus, eu venenatis lacus rhoncus ac. Sed lacus risus, euismod pretium mattis vitae, convallis id magna. Nullam tincidunt, elit sed faucibus ornare, diam ante tempus velit, sed vehicula diam mi id arcu. In pellentesque faucibus fermentum. Etiam quis arcu scelerisque, interdum urna vitae, vulputate libero. Nulla facilisi. Nunc eget finibus massa. Nam congue felis ipsum, id convallis elit maximus in. Nulla nulla sem, lobortis a blandit et, ornare eget eros. Curabitur tristique tempor massa, non faucibus nulla molestie fermentum. "
+        title: articleData.title, 
+        imageUrl: articleData.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.jpg" : articleData.featuredImage.node.sourceUrl,
+        date: date, 
+        content: fixedContent
     }
 
     const comments = [
@@ -30,11 +40,10 @@ const ArticleView = (data) => {
                 <div>
                     <Image src={article.imageUrl} alt="" height="540" width="960"/>
                 </div>
-                <div>
-                    <p className="mt-8 text-justify mb-40 text-content">{article.content}</p>
+                <div className="mt-8 text-justify mb-8 text-content whitespace-pre-line" dangerouslySetInnerHTML={{__html: article.content}}>
                 </div>
             </div>
-            <div className="w-commentArt bg-comment opacity-70 mb-40">
+            <div className="w-commentArt bg-comment opacity-70 mb-36">
                 <p className="underline">{`Comments (${comments.length})`}</p>
                 <div className='flex flex-col items-center'>
                     <ul className='w-oneComment paw-comment mt-7'>
@@ -51,77 +60,23 @@ const ArticleView = (data) => {
                     </ul>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
 
 export async function getStaticProps(context){
-    const res = await fetch(process.env.WORDPRESS_API_URL,{ 
-        method: 'POST',
-        headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            query: `
-            query getMainContent ($id: ID!, $idType: PostIdType!) {
-                post(id: $id, idType: $idType) {
-                  date
-                  slug
-                  content
-                  title
-                  featuredImage {
-                    node {
-                      sourceUrl
-                    }
-                  }
-                }
-              }
-            `,
-            variables: {
-                id: context.params.slug,
-                idType: 'SLUG'
-            }
-        })
-    })
-
-    const json = await res.json()
-    return{
-        props:{
-            post: json.data.post,
+    let content = await getOnePageContent(context)
+    return {
+        props : {
+            content
         }
     }
 }
 
 export async function getStaticPaths(){
-    const res = await fetch(process.env.WORDPRESS_API_URL,{
-        method: 'POST',
-        headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            query: `
-            query getAllPosts {
-                posts {
-                  nodes {
-                    date
-                    content
-                    title
-                    slug
-                    featuredImage {
-                      node {
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-        })
-    })
-
-    const json = await res.json()
-    const posts = json.data.posts.nodes
-    const paths = posts.map((post) => ({
-        params: { slug: post.slug }
-    }))
-
-    return { paths, fallback: false }
+    const paths = await getArticlePaths()
+    return { paths, fallback: false}
 }
 
 export default ArticleView
