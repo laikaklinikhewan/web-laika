@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
@@ -9,13 +8,12 @@ const ArticlePreview = ({ imgUrl, title, date, slug }) => {
       <a className="mt-4">
         <div className="w-48 text-justify text-sm">
           <div className="relative w-full h-32">
-            <Image
+            <img
+              className="w-full h-full object-cover"
               src={
                 imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.jpg"
               }
               alt="Article Image"
-              layout="fill"
-              objectFit="cover"
             />
           </div>
           <p className="font-medium overflow-hidden overflow-ellipsis whitespace-nowrap">
