@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import PinkNavbarButton from "./PinkNavbarButton";
 import Link from "next/link";
 
@@ -11,7 +10,7 @@ const PinkNavbar = ({ listButton, setActivePage }) => {
       <div className="md:ml-xnav md:mr-12 my-ynav self-center">
         <Link href="/" passHref={true}>
           <a>
-            <Image
+            <img
               src="/assets/LOGO.png"
               alt="Laika"
               width="100px"

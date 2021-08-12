@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import MainNavbarButton from "./MainNavbarButton";
 
 const MainNavbar = () => {
@@ -38,7 +37,7 @@ const MainNavbar = () => {
   return (
     <div className="flex fixed bg-white z-50 justify-between h-28 max-w-8xl w-screen shadow-lg text-base inline-flex">
       <div className="relative w-logo h-logo mx-xnav my-ynav">
-        <Image src="/assets/LOGO.png" alt="Laika" layout="fill" />
+        <img src="/assets/LOGO.png" alt="Laika" layout="fill" />
       </div>
       <div className="grid md:mr-xnav mr-xnavmin">
         <nav className="flex space-x-10 text-tn md:text-sm text-media items-center">
@@ -47,7 +46,7 @@ const MainNavbar = () => {
             href="https://www.instagram.com/laikaklinikhewan/"
           >
             <div className="md:p-1 p-0.5 h-igt w-igt md:h-ig md:w-ig">
-              <Image
+              <img
                 src="/icons/instagram-head.svg"
                 alt=""
                 width="23px"
@@ -61,7 +60,7 @@ const MainNavbar = () => {
             href="https://bit.ly/asklaikaklinikhewan"
           >
             <div className="md:p-1 p-0.5 h-igt w-igt md:h-ig md:w-ig">
-              <Image
+              <img
                 src="/icons/whatsapp-head.svg"
                 alt=""
                 width="23px"
@@ -75,7 +74,7 @@ const MainNavbar = () => {
             href="https://mail.google.com/mail/u/0/?fs=1&to=laikaklinikhewan@gmail.com&tf=cm"
           >
             <div className="md:h-mail md:w-mail h-mailt w-mailt">
-              <Image
+              <img
                 src="/icons/mail-head.svg"
                 alt=""
                 width="20px"

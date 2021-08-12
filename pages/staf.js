@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PinkNavbar from "../components/PinkNavbar";
-import Image from "next/image";
 import Footer from "../components/Footer";
 import { getStaffs } from "../lib/wordpress";
 
@@ -8,13 +7,7 @@ const StaffListItem = ({ photoUrl, name, desc }) => {
   return (
     <div className="flex flex-col md:flex-row items-center md:items-start my-10 md:px-16 lg:px-32">
       <div className="relative w-photo h-photo flex-shrink-0">
-        <Image
-          className=""
-          src={photoUrl}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-        />
+        <img className="w-full h-full object-cover" src={photoUrl} alt="" />
       </div>
       <div className="px-10 md:px-0 md:ml-10 mt-6 md:mt-0 max-w-1/2">
         <p className="mb-4 md:mb-2 mx-auto text-xl md:text-2xl font-bold underline">
