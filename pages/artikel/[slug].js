@@ -47,7 +47,6 @@ const ArticleView = (data) => {
                 <p className="underline">{`Comments (${comments.length})`}</p>
                 <div className='flex flex-col items-center'>
                     <ul className='w-oneComment paw-comment mt-7'>
-                        {/* Self reminder: const comments jangan dipindah karena nanti fetchnya disini */}
                         {comments.map((comment, index) => (
                             <OneComment
                                 key={index}

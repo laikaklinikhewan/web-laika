@@ -6,7 +6,6 @@ import FacilityCard from "../components/FacilityCard";
 import Footer from "../components/Footer";
 
 SwiperCore.use(Navigation);
-// array cards ada di bawah
 
 export default function Facilities() {
   const [activeIndex, setActiveIndex] = useState(0);
