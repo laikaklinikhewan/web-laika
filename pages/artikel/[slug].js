@@ -12,7 +12,7 @@ const ArticleView = (data) => {
 
     const article = {
         title: articleData.title, 
-        imageUrl: articleData.featuredImage.node.sourceUrl,
+        imageUrl: articleData.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.jpg" : articleData.featuredImage.node.sourceUrl,
         date: date, 
         content: fixedContent
     }
