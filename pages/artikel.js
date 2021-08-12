@@ -1,10 +1,12 @@
 import React from 'react'
 import HeaderArticle from '../components/HeaderArticle'
 import ArticlePreview2 from '../components/ArticlePreview2'
+import { getPostsLink } from '../lib/wordpress'
 import Footer from '../components/Footer'
 
 
-const ArticleMore = () => {
+const ArticleMore = (data) => {
+    console.log({data})
     const buttonArticle = [
         { text: "Artikel", linkUrl: "#"},
         { text: "Pengumuman", linkUrl: "#"}
@@ -12,7 +14,6 @@ const ArticleMore = () => {
 
     const listArticle = [
         {title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit. ", imageUrl:"/assets/two-dogs-playing-tug-of-war-with-disc.jpg", linkUrl:"#", date:"dd/mm/yyyy hh:MM WIB"},
-
     ]
 
     return (
@@ -36,6 +37,13 @@ const ArticleMore = () => {
             <Footer/>
         </>
     )
+}
+
+export async function getStaticProps(){
+    const posts = await getPostsLink()
+    return {
+        props: { posts }
+    }
 }
 
 export default ArticleMore
