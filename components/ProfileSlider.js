@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -28,11 +27,10 @@ const ProfileSlider = () => {
         {sliderImages.map((slide, index) => (
           <SwiperSlide tag="li" key={index} className="h-full">
             <div style={{ height: 450 }}>
-              <Image
+              <img
+                className="w-full h-full object-cover"
                 src={slide.imgUrl}
                 alt={slide.alt}
-                layout="fill"
-                objectFit="cover"
               />
             </div>
           </SwiperSlide>

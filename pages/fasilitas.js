@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FacilityCard from "../components/FacilityCard";
@@ -19,11 +18,10 @@ export default function Facilities() {
     >
       <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex">
         <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:h-72 flex-shrink-0">
-          <Image
+          <img
+            className="w-full h-full object-cover"
             src={activeCard.imgUrl}
             alt={activeCard.alt}
-            layout="fill"
-            objectFit="cover"
           />
         </div>
         <div className="lg:pl-12 h-full">
