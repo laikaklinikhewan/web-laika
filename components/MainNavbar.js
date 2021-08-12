@@ -85,7 +85,6 @@ const MainNavbar = () => {
           </a>
         </nav>
         <nav className="flex flex-row-reverse space-x-10 space-x-reverse mt-ynav items-center md:text-base text-sm">
-          {console.log(activeSect)}
           {SectorList.map((sect, index) => (
             <MainNavbarButton
               key={index}
