@@ -17,7 +17,7 @@ const JamPraktek = (props) => {
         style={{ backgroundImage: "url(/assets/lobi.jpeg)" }}
       ></div>
       <div className="flex flex-col justify-center relative z-10 ml-24 my-32 h-full w-1/2">
-        <h2 className="text-5xl font-bold text-white mb-12 text-outline textOutlineThick">
+        <h2 className="londrina font-black text-6xl text-white mb-12 text-outline textOutlineThick">
           Jam Praktek
         </h2>
         <ul className="text-white text-3xl paw-list">
