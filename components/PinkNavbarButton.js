@@ -8,7 +8,7 @@ const PinkNavbarButton = ({ isActive, text, onClickFunc, linkTo }) => {
         onClick={onClickFunc}
         className={`filter ${isActive ? "bg-button shadow-roundBtn" : "bg-white drop-shadow-roundBtn"} flex items-center h-11 w-36 ml-6 rounded-full justify-center`}
       >
-        {text}
+        <p className='mt-1'>{text}</p>
       </a>
     </Link>
   );
