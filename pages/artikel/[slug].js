@@ -1,5 +1,4 @@
 import React from "react";
-import OneComment from "../../components/OneComment";
 import { getArticlePaths, getOnePageContent } from "../../lib/wordpress";
 import ISOtoDate from "../../lib/ISOtoDate";
 import Footer from "../../components/Footer";
@@ -60,22 +59,6 @@ const ArticleView = (data) => {
           className="mt-8 text-justify mb-8 text-content whitespace-pre-line"
           dangerouslySetInnerHTML={{ __html: article.content }}
         ></div>
-      </div>
-      <div className="w-commentArt bg-comment opacity-70 mb-36">
-        <p className="underline">{`Comments (${comments.length})`}</p>
-        <div className="flex flex-col items-center">
-          <ul className="w-oneComment paw-comment mt-7">
-            {comments.map((comment, index) => (
-              <OneComment
-                key={index}
-                author={comment.author}
-                date={comment.date}
-                content={comment.content}
-                replies={comment.replies}
-              />
-            ))}
-          </ul>
-        </div>
       </div>
       <Footer />
     </div>
