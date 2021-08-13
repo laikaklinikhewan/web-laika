@@ -2,6 +2,7 @@ import React from "react";
 import { getArticlePaths, getOnePageContent } from "../../lib/wordpress";
 import ISOtoDate from "../../lib/ISOtoDate";
 import Footer from "../../components/Footer";
+import Head from 'next/head'
 
 const ArticleView = (data) => {
   const articleData = data.content.post;
@@ -18,35 +19,12 @@ const ArticleView = (data) => {
     content: fixedContent,
   };
 
-  const comments = [
-    {
-      author: "Client1",
-      date: "dd/mm/yyyy HH:MM WIB",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      replies: {
-        author: "LaikaKlinikHewan",
-        date: "dd/mm/yyyy HH:MM WIB",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      },
-    },
-    {
-      author: "Client2",
-      date: "dd/mm/yyyy HH:MM WIB",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      replies: {
-        author: "LaikaKlinikHewan",
-        date: "dd/mm/yyyy HH:MM WIB",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      },
-    },
-  ];
-
   return (
     <div className="flex h-full min-h-screen w-full bg-article flex-col items-center">
+      <Head>
+        <title>{article.title}</title>
+        <link rel="icon" href="/assets/LOGO.png" />
+      </Head>
       <div className="w-viewArt mt-28">
         <div className="">
           <h1 className="text-title">{article.title}</h1>
