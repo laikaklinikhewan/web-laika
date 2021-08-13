@@ -17,7 +17,10 @@ const ArticlePreview2 = ({
             isFirst ? "mt-20" : "mt-10"
           } flex relative transform hover:scale-105 transition`}
         >
-          <img src={imageUrl} alt="" height={120} width={192} layout="fixed" />
+          <div className='h-preview w-preview overflow-hidden bg-white items-center'>
+            <img src={imageUrl} alt="" height={120} width={192} layout="absolute" />
+          </div>
+          
           <div className="border-b-2 w-dividerArt ml-8">
             <h1 className="text-2xl">{title}</h1>
             <p className="bottom-0 absolute opacity-50">{date}</p>

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ArticlePreview from "./ArticlePreview";
 import Link from "next/link";
+import ISOtoDate from "../lib/ISOtoDate";
 
 const PreviewList = ({ category, list }) => {
   const arrow = (
@@ -27,7 +28,7 @@ const PreviewList = ({ category, list }) => {
     </svg>
   );
   return (
-    <>
+    <div className="mt-24">
       <h2 className="text-2xl text-pink-500 font-bold mb-2 text-center md:text-left">
         {category}
       </h2>
@@ -36,7 +37,7 @@ const PreviewList = ({ category, list }) => {
           <li key={index} className="transform hover:scale-105 transition">
             <ArticlePreview
               title={listItem.title}
-              date={listItem.date}
+              date={ISOtoDate(listItem.date)}
               slug={listItem.slug}
               imgUrl={
                 listItem.featuredImage
@@ -53,14 +54,14 @@ const PreviewList = ({ category, list }) => {
           </a>
         </Link>
       </ul>
-    </>
+    </div>
   );
 };
 
 const HomeArticles = ({ articles, announcements }) => {
   return (
     <section
-      className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain"
+      className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain min-h-screen"
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
       id="artikel"
     >
