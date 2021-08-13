@@ -13,17 +13,17 @@ const ArticlePreview2 = ({
     <div className="">
       <Link href={linkUrl} passHref={true}>
         <a
-          className={`${isLast ? "mb-20" : ""} w-artPrev ${
+          className={`${isLast ? "mb-20" : ""} md:w-artPrev w-11/12 ${
             isFirst ? "mt-20" : "mt-10"
           } flex relative transform hover:scale-105 transition`}
         >
-          <div className='h-preview w-preview overflow-hidden bg-white items-center'>
+          <div className='md:h-preview h-auto w-preview overflow-hidden items-center'>
             <img src={imageUrl} alt="" height={120} width={192} layout="absolute" />
           </div>
           
-          <div className="border-b-2 w-dividerArt ml-8">
-            <h1 className="text-2xl">{title}</h1>
-            <p className="bottom-0 absolute opacity-50">{date}</p>
+          <div className="md:border-b-2 w-dividerArt md:ml-8 ml-3">
+            <h1 className="md:text-2xl sm:text-lg text-md">{title}</h1>
+            <p className="md:bottom-0 md:absolute opacity-50 text-xs md:text-md">{date}</p>
           </div>
         </a>
       </Link>

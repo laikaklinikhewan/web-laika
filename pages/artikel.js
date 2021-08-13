@@ -35,7 +35,7 @@ const ArticleMore = (data) => {
                 <title>Artikel & Pengumuman</title>
                 <link rel="icon" href="/assets/LOGO.png" />
             </Head>
-            <div className='h-full w-full min-h-screen bg-article flex flex-col items-center'>
+            <div className='h-full w-full min-h-screen bg-article flex flex-col md:items-center'>
                 <HeaderArticle listButton={buttonArticle} activePage={activePage} setActivePage={setActivePage}/>
                 <ul className={`${activePage === 0 ? 'block' : 'hidden'}`}>
                     {  listArticles.map((article, index)=>(
