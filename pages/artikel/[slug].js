@@ -1,8 +1,8 @@
 import React from "react";
-import OneComment from "../../components/OneComment";
 import { getArticlePaths, getOnePageContent } from "../../lib/wordpress";
 import ISOtoDate from "../../lib/ISOtoDate";
 import Footer from "../../components/Footer";
+import Head from 'next/head'
 
 const ArticleView = (data) => {
   const articleData = data.content.post;
@@ -19,35 +19,12 @@ const ArticleView = (data) => {
     content: fixedContent,
   };
 
-  const comments = [
-    {
-      author: "Client1",
-      date: "dd/mm/yyyy HH:MM WIB",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      replies: {
-        author: "LaikaKlinikHewan",
-        date: "dd/mm/yyyy HH:MM WIB",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      },
-    },
-    {
-      author: "Client2",
-      date: "dd/mm/yyyy HH:MM WIB",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      replies: {
-        author: "LaikaKlinikHewan",
-        date: "dd/mm/yyyy HH:MM WIB",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dolor at fringilla feugiat.",
-      },
-    },
-  ];
-
   return (
     <div className="flex h-full min-h-screen w-full bg-article flex-col items-center">
+      <Head>
+        <title>{article.title}</title>
+        <link rel="icon" href="/assets/LOGO.png" />
+      </Head>
       <div className="w-viewArt mt-28">
         <div className="">
           <h1 className="text-title">{article.title}</h1>
@@ -60,22 +37,6 @@ const ArticleView = (data) => {
           className="mt-8 text-justify mb-8 text-content whitespace-pre-line"
           dangerouslySetInnerHTML={{ __html: article.content }}
         ></div>
-      </div>
-      <div className="w-commentArt bg-comment opacity-70 mb-36">
-        <p className="underline">{`Comments (${comments.length})`}</p>
-        <div className="flex flex-col items-center">
-          <ul className="w-oneComment paw-comment mt-7">
-            {comments.map((comment, index) => (
-              <OneComment
-                key={index}
-                author={comment.author}
-                date={comment.date}
-                content={comment.content}
-                replies={comment.replies}
-              />
-            ))}
-          </ul>
-        </div>
       </div>
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PinkNavbar from "../components/PinkNavbar";
 import Footer from "../components/Footer";
 import { getStaffs } from "../lib/wordpress";
+import Head from 'next/head'
 
 const StaffListItem = ({ photoUrl, name, desc }) => {
   return (
@@ -31,6 +32,10 @@ export default function Staff({ doctors, paramedics }) {
 
   return (
     <main>
+      <Head>
+        <title>Staf Medis Laika</title>
+        <link rel="icon" href="/assets/LOGO.png" />
+      </Head>
       <div className="min-h-screen w-full bg-staf">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
         <div>

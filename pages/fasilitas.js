@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import FacilityCard from "../components/FacilityCard";
 import Footer from "../components/Footer";
 import PinkNavbar from "../components/PinkNavbar";
+import Head from 'next/head'
 
 SwiperCore.use(Navigation);
 
@@ -14,6 +15,10 @@ export default function Facilities() {
 
   return (
     <>
+      <Head>
+        <title>Fasilitas Klinik</title>
+        <link rel="icon" href="/assets/LOGO.png" />
+      </Head>
       <PinkNavbar listButton={[{ text: "Fasilitas", linkUrl: "#" }]} />
       <main
         className="bg-white min-h-screen"
