@@ -4,11 +4,11 @@ import CardButton from "./CardButton";
 const InfoKlinik = () => {
   return (
     <section
-      className="bg-pink-200 bg-cover py-12"
+      className="bg-pink-200 bg-cover py-12 min-h-screen"
       style={{ backgroundImage: "url(/assets/bck-with-paw4.png" }}
       id="info"
     >
-      <div className="h-32 relative w-64 mx-auto mb-8">
+      <div className="h-32 relative w-64 mx-auto mb-8 mt-24">
         <div
           className="w-full h-full filter drop-shadow-lg bg-auto bg-no-repeat"
           style={{ backgroundImage: "url(/assets/bone-bg.svg)" }}
