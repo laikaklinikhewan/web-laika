@@ -5,6 +5,7 @@ import { getPostsLink } from '../lib/wordpress'
 import categoryCheck from '../lib/categoryCheck'
 import Footer from '../components/Footer'
 import ISOtoDate from '../lib/ISOtoDate'
+import Head from 'next/head'
 
 
 const ArticleMore = (data) => {
@@ -30,6 +31,10 @@ const ArticleMore = (data) => {
 
     return (
         <>
+            <Head>
+                <title>Artikel & Pengumuman</title>
+                <link rel="icon" href="/assets/LOGO.png" />
+            </Head>
             <div className='h-full w-full min-h-screen bg-article flex flex-col items-center'>
                 <HeaderArticle listButton={buttonArticle} activePage={activePage} setActivePage={setActivePage}/>
                 <ul className={`${activePage === 0 ? 'block' : 'hidden'}`}>
