@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeaderArticle = ({ listButton, activePage, setActivePage }) => {
   return (
-    <div className="flex h-28 w-artNav border-b-4 border-article justify-self-center">
+    <div className="flex h-28 md:w-artNav border-b-4 border-article justify-self-center">
       {listButton.map((button, index) => (
         <HeaderArticleButton
           isLast={index === listButton.length - 1}
@@ -16,7 +16,7 @@ const HeaderArticle = ({ listButton, activePage, setActivePage }) => {
         />
       ))}
       <Link href="/">
-        <a className="mt-16 flex items-center left-tight relative">
+        <a className="mt-16 flex items-center lg:left-tight lg:relative hidden lg:block">
           <img src="/icons/return.svg" alt="ret" width="22" height="22" />
           Kembali
         </a>
