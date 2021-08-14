@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeaderArticle = ({ listButton, activePage, setActivePage }) => {
   return (
-    <div className="flex h-28 md:w-artNav border-b-4 border-article justify-self-center">
+    <div className="flex h-28 sm:w-artNav border-b-4 border-article justify-self-center">
       {listButton.map((button, index) => (
         <HeaderArticleButton
           isLast={index === listButton.length - 1}
