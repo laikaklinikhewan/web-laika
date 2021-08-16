@@ -11,12 +11,12 @@ const JamPraktek = (props) => {
     },
   ];
   return (
-    <section className="relative h-auto overflow-hidden" id="jam">
+    <section className="relative h-auto overflow-hidden min-h-screen" id="jam">
       <div
         className="bg-cover bg-bottom absolute z-0 top-0 left-0 w-full h-full filter blur-sm"
         style={{ backgroundImage: "url(/assets/lobi.jpeg)" }}
       ></div>
-      <div className="flex flex-col justify-center relative z-10 ml-24 my-32 h-full w-1/2">
+      <div className="flex flex-col justify-center relative z-10 ml-24 mt-60 h-full w-1/2">
         <h2 className="londrina font-black text-6xl text-white mb-12 text-outline textOutlineThick">
           Jam Praktek
         </h2>

@@ -10,17 +10,20 @@ const ArticlePreview2 = ({
   isFirst,
 }) => {
   return (
-    <div className="">
+    <div className="mx-4">
       <Link href={linkUrl} passHref={true}>
         <a
-          className={`${isLast ? "mb-20" : ""} w-artPrev ${
+          className={`${isLast ? "mb-20" : ""} sm:w-artPrev w-11/12 ${
             isFirst ? "mt-20" : "mt-10"
           } flex relative transform hover:scale-105 transition`}
         >
-          <img src={imageUrl} alt="" height={120} width={192} layout="fixed" />
-          <div className="border-b-2 w-dividerArt ml-8">
-            <h1 className="text-2xl">{title}</h1>
-            <p className="bottom-0 absolute opacity-50">{date}</p>
+          <div className='sm:h-preview h-auto w-preview overflow-hidden items-center'>
+            <img src={imageUrl} alt="" height={120} width={192} layout="absolute" />
+          </div>
+          
+          <div className="sm:border-b-2 w-dividerArt sm:ml-8 ml-3">
+            <h1 className="md:text-2xl sm:text-xl text-md">{title}</h1>
+            <p className="sm:bottom-0 sm:absolute opacity-50 text-xs sm:text-md">{date}</p>
           </div>
         </a>
       </Link>
