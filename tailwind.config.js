@@ -51,7 +51,8 @@ module.exports = {
         button: '54px',
         '38': '9.5rem',
         photo: '240px',
-        cover: '100vw'
+        cover: '100vw',
+        preview: '120px'
       },
       width: {
         logo: '65px',
@@ -67,7 +68,8 @@ module.exports = {
         dividerArt: '75%',
         viewArt: '60%',
         commentArt: '80vw',
-        oneComment: '80%'
+        oneComment: '80%',
+        preview:'192px'
       },
       margin: {
         xnav: '8.119vw',

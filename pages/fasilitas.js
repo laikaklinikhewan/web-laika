@@ -24,7 +24,7 @@ export default function Facilities() {
         className="bg-white min-h-screen"
         style={{ backgroundImage: "url(/assets/bck2.png)" }}
       >
-        <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex">
+        <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex mb-6">
           <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:h-72 flex-shrink-0">
             <img
               className="w-full h-full object-cover"
