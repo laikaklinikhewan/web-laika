@@ -4,7 +4,7 @@ import ArticlePreview from "./ArticlePreview";
 import Link from "next/link";
 import ISOtoDate from "../lib/ISOtoDate";
 
-const PreviewList = ({ category, list }) => {
+const PreviewList = ({ href, category, list }) => {
   const arrow = (
     <svg width="55" height="55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -47,7 +47,7 @@ const PreviewList = ({ category, list }) => {
             ></ArticlePreview>
           </li>
         ))}
-        <Link href="/artikel">
+        <Link href={href}>
           <a className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
@@ -65,8 +65,8 @@ const HomeArticles = ({ articles, announcements }) => {
       style={{ backgroundImage: "url(/assets/bck2.png)" }}
       id="artikel"
     >
-      <PreviewList category="Artikel" list={articles} />
-      <PreviewList category="Pengumuman" list={announcements} />
+      <PreviewList href="/artikel" category="Artikel" list={articles} />
+      <PreviewList href="/artikel?sect=pengumuman" category="Pengumuman" list={announcements} />
     </section>
   );
 };
