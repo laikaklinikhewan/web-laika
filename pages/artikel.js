@@ -8,8 +8,8 @@ import ISOtoDate from '../lib/ISOtoDate'
 import Head from 'next/head'
 
 
-const ArticleMore = (data) => {
-    const listPosts = data.posts.posts.nodes
+const ArticleMore = ({posts}) => {
+    const listPosts = posts
     let listArticles = []
     let listAnnouncements = []
     listPosts.map((post) =>{
