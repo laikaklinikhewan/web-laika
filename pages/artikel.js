@@ -9,9 +9,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 
-const ArticleMore = (data) => {
+const ArticleMore = ({posts}) => {
     const { query } = useRouter()
-    const listPosts = data.posts.posts.nodes
+    const listPosts = posts
     let listArticles = []
     let listAnnouncements = []
     listPosts.map((post) =>{
