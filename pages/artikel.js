@@ -6,9 +6,11 @@ import categoryCheck from '../lib/categoryCheck'
 import Footer from '../components/Footer'
 import ISOtoDate from '../lib/ISOtoDate'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 
 const ArticleMore = (data) => {
+    const { query } = useRouter()
     const listPosts = data.posts.posts.nodes
     let listArticles = []
     let listAnnouncements = []
@@ -19,15 +21,12 @@ const ArticleMore = (data) => {
             listAnnouncements = listAnnouncements.concat(post)
         }
     })
-    
 
-
-    const [activePage, setActivePage] = useState(0)
+    const [activePage, setActivePage] = useState(query.sect == 'pengumuman' ? 1 : 0)
     const buttonArticle = [
-        { text: "Artikel", linkUrl: "#"},
-        { text: "Pengumuman", linkUrl: "#"}
+        { text: "Artikel", linkUrl: ""},
+        { text: "Pengumuman", linkUrl: ""}
     ]
-
 
     return (
         <>
@@ -35,7 +34,7 @@ const ArticleMore = (data) => {
                 <title>Artikel & Pengumuman</title>
                 <link rel="icon" href="/assets/LOGO.png" />
             </Head>
-            <div className='h-full w-full min-h-screen bg-article flex flex-col items-center'>
+            <div className='h-full w-full min-h-screen bg-article flex flex-col sm:items-center'>
                 <HeaderArticle listButton={buttonArticle} activePage={activePage} setActivePage={setActivePage}/>
                 <ul className={`${activePage === 0 ? 'block' : 'hidden'}`}>
                     {  listArticles.map((article, index)=>(
