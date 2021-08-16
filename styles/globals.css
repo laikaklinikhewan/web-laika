@@ -46,3 +46,10 @@ a {
 .textOutlineThick {
   -webkit-text-stroke: 2.5px black;
 }
+
+#disqus_thread {
+  width: 60%;
+  background-color: #ffe9e9;
+  opacity: 0.85;
+  padding: 25px 25px 25px 25px;
+}

@@ -6,9 +6,11 @@ import categoryCheck from '../lib/categoryCheck'
 import Footer from '../components/Footer'
 import ISOtoDate from '../lib/ISOtoDate'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 
 const ArticleMore = (data) => {
+    const { query } = useRouter()
     const listPosts = data.posts.posts.nodes
     let listArticles = []
     let listAnnouncements = []
@@ -19,15 +21,12 @@ const ArticleMore = (data) => {
             listAnnouncements = listAnnouncements.concat(post)
         }
     })
-    
 
-
-    const [activePage, setActivePage] = useState(0)
+    const [activePage, setActivePage] = useState(query.sect == 'pengumuman' ? 1 : 0)
     const buttonArticle = [
-        { text: "Artikel", linkUrl: "#"},
-        { text: "Pengumuman", linkUrl: "#"}
+        { text: "Artikel", linkUrl: ""},
+        { text: "Pengumuman", linkUrl: ""}
     ]
-
 
     return (
         <>

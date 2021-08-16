@@ -23,39 +23,41 @@ const ArticleView = (data) => {
     content: fixedContent,
   };
 
-  const disqusShortname = "localhost-3000-hjzcrcfzcz"
+  const disqusShortname = "laikaklinikhewan-pages-dev"
 
   const disqusConfig = {
-    url: `localhost:3000/artikel/${article.slug}`,
+    url: process.env.NODE_ENV === 'development' ? `http://${process.env.DISQUS_URL}/artikel/${article.slug}` : `https://${process.env.DISQUS_URL}/artikel/${article.slug}`,
     identifier: article.id,
-    title: article.title
+    title: article.title,
   }
 
   return (
-    <div className="flex h-full min-h-screen w-full bg-article flex-col items-center">
-      <Head>
-        <title>{article.title}</title>
-        <link rel="icon" href="/assets/LOGO.png" />
-      </Head>
-      <div className="md:w-viewArt w-10/12 md:mt-28 mt-10">
-        <div className="">
-          <h1 className="md:text-title text-lg">{article.title}</h1>
-          <p className="mt-2 mb-2 opacity-50 md:text-base text-xs">{article.date}</p>
+    <>
+      <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
+        <Head>
+          <title>{article.title}</title>
+          <link rel="icon" href="/assets/LOGO.png" />
+        </Head>
+        <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60">
+          <div className="">
+            <h1 className="md:text-title text-lg" style={{lineHeight:'inherit'}}>{article.title}</h1>
+            <p className="mt-2 mb-2 opacity-50 md:text-base text-xs">{article.date}</p>
+          </div>
+          <div>
+            <img src={article.imageUrl} alt="" height="540" width="960" />
+          </div>
+          <div
+            className="mt-8 text-justify md:mb-8 md:text-content text-sm whitespace-pre-line"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          ></div>
         </div>
-        <div>
-          <img src={article.imageUrl} alt="" height="540" width="960" />
-        </div>
-        <div
-          className="mt-8 text-justify md:mb-8 md:text-content text-sm whitespace-pre-line"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        ></div>
+        <DiscussionEmbed        
+          shortname= {disqusShortname}
+          config={disqusConfig}
+        />
       </div>
-      <DiscussionEmbed
-        shortname= {disqusShortname}
-        config={disqusConfig}
-      />
       <Footer />
-    </div>
+    </>
   );
 };
 
