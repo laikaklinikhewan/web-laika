@@ -11,7 +11,7 @@ const PinkNavbar = ({ listButton, setActivePage }) => {
         <Link href="/" passHref={true}>
           <a>
             <img
-              src="/assets/LOGO.png"
+              src="/assets/LOGO.webp"
               alt="Laika"
               width="100px"
               height="100px"

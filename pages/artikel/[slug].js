@@ -17,7 +17,7 @@ const ArticleView = (data) => {
     slug: articleData.slug,
     imageUrl:
       articleData.featuredImage == null
-        ? "/assets/two-dogs-playing-tug-of-war-with-disc.jpg"
+        ? "/assets/two-dogs-playing-tug-of-war-with-disc.webp"
         : articleData.featuredImage.node.sourceUrl,
     date: date,
     content: fixedContent,
@@ -36,7 +36,7 @@ const ArticleView = (data) => {
       <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
         <Head>
           <title>{article.title}</title>
-          <link rel="icon" href="/assets/LOGO.png" />
+          <link rel="icon" href="/assets/LOGO.webp" />
         </Head>
         <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60">
           <div className="">

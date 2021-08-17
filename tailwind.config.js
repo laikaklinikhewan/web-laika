@@ -9,8 +9,8 @@ module.exports = {
     }),
     extend: {
       backgroundImage: theme => ({
-        'pinkHeader': "url('/assets/PinkHeader.png')",
-        'article': "url('/assets/bck2.png')"
+        'pinkHeader': "url('/assets/PinkHeader.webp')",
+        'article': "url('/assets/bck2.webp')"
       }),
       backgroundColor: theme => ({
         ...theme('colors'),
