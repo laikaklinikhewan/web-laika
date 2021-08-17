@@ -11,7 +11,7 @@ const ArticlePreview = ({ imgUrl, title, date, slug }) => {
             <img
               className="w-full h-full object-cover"
               src={
-                imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.jpg"
+                imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.webp"
               }
               alt="Article Image"
             />

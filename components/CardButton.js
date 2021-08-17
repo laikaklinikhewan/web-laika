@@ -4,7 +4,7 @@ import styles from "../styles/CardButton.module.css";
 import Link from "next/link";
 
 const CardButton = ({ bgImgUrl, urlTo, text }) => {
-  let tempbg = "/assets/lobi.jpeg";
+  let tempbg = "/assets/lobi.webp";
   return (
     <Link href={urlTo || "#"}>
       <a

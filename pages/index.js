@@ -12,7 +12,7 @@ export default function Home({ articles, announcements }) {
     <>
       <Head>
         <title>Laika | Klinik Hewan & Petshop</title>
-        <link rel="icon" href="/assets/LOGO.png" />
+        <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
       <MainNavbar />
       <IndexHero />

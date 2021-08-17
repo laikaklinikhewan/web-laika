@@ -7,7 +7,7 @@ const IndexHero = () => {
     <>
       <section
         className="w-100 h-100 lg:h-screen bg-no-repeat bg-cover bg-bottom lg:bg-right-bottom py-32 lg:pb-auto"
-        style={{ backgroundImage: "url(/assets/bg-index.jpg)" }}
+        style={{ backgroundImage: "url(/assets/bg-index.webp)" }}
         id="hero"
       >
         <div className="md:w-2/3 lg:w-2/6 ml-4 md:ml-20 text-white flex flex-col justify-center h-full">
