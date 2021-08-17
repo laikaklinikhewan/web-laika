@@ -79,13 +79,13 @@ const MainNavbar = () => {
           </a>
         </nav>
         <div className="relative min-w-logo min-h-logo ml-10 mt-6">
-          <img src="/assets/LOGO.png" alt="Laika" height={65} width={65} layout="fill" />
+          <img src="/assets/LOGO.webp" alt="Laika" height={65} width={65} layout="fill" />
         </div>
 
       </div>
       <div className="sm:flex hidden fixed bg-white z-50 justify-between h-28 max-w-8xl w-screen shadow-lg text-base inline-flex">
         <div className="static min-w-logo min-h-logo lg:mx-xnav ml-10 my-ynav">
-          <img src="/assets/LOGO.png" alt="Laika" height={65} width={65} layout="fill" />
+          <img src="/assets/LOGO.webp" alt="Laika" height={65} width={65} layout="fill" />
         </div>
         <div className="grid lg:mr-xnav mr-xnavmin">
           <nav className="flex space-x-10 text-tn lg:text-sm text-media items-center">

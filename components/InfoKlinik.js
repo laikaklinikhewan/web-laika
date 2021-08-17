@@ -5,7 +5,7 @@ const InfoKlinik = () => {
   return (
     <section
       className="bg-pink-200 bg-cover py-12 min-h-screen"
-      style={{ backgroundImage: "url(/assets/bck-with-paw4.png" }}
+      style={{ backgroundImage: "url(/assets/bck-with-paw4.webp" }}
       id="info"
     >
       <div className="h-32 relative w-64 mx-auto mb-8 mt-24">
@@ -21,21 +21,21 @@ const InfoKlinik = () => {
         <li className="grid">
           <CardButton
             text="Staf"
-            bgImgUrl="/assets/doctors.jpg"
+            bgImgUrl="/assets/doctors.webp"
             urlTo="/staf"
           />
         </li>
         <li className="grid">
           <CardButton
             text="Fasilitas"
-            bgImgUrl="/assets/usg.jpeg"
+            bgImgUrl="/assets/usg.webp"
             urlTo="/fasilitas"
           />
         </li>
         <li className="grid">
           <CardButton
             text="Profil Klinik"
-            bgImgUrl="/assets/nonblur.jpg"
+            bgImgUrl="/assets/nonblur.webp"
             urlTo="/profil"
           />
         </li>

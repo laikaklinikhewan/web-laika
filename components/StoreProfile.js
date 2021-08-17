@@ -6,7 +6,7 @@ const StoreProfile = () => {
   return (
     <main
       className="bg-white"
-      style={{ backgroundImage: "url(/assets/bck2.png)" }}
+      style={{ backgroundImage: "url(/assets/bck2.webp)" }}
     >
       <PinkNavbar listButton={[{ text: "Profil Klinik", linkUrl: "#" }]} />
       <div className="py-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>

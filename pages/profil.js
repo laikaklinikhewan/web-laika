@@ -7,7 +7,7 @@ export default function Profile() {
     <>
       <Head>
         <title>Profil Klinik</title>
-        <link rel="icon" href="/assets/LOGO.png" />
+        <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
       <StoreProfile />
       <Footer />

@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Pagination, Navigation]);
 
 const sliderImages = [
-  { imgUrl: "/assets/lobi.jpeg", alt: "gambar lobi" },
-  { imgUrl: "/assets/usg.jpeg", alt: "gambar alat usg" },
-  { imgUrl: "/assets/ruangklinik.jpeg", alt: "ruangan klinik" },
+  { imgUrl: "/assets/lobi.webp", alt: "gambar lobi" },
+  { imgUrl: "/assets/usg.webp", alt: "gambar alat usg" },
+  { imgUrl: "/assets/ruangklinik.webp", alt: "ruangan klinik" },
 ];
 
 const ProfileSlider = () => {
