@@ -2,6 +2,7 @@ import React from "react";
 import { getArticlePaths, getOnePageContent } from "../../lib/wordpress";
 import ISOtoDate from "../../lib/ISOtoDate";
 import Footer from "../../components/Footer";
+import HeaderArticle from "../../components/HeaderArticle";
 import Head from 'next/head'
 import { DiscussionEmbed } from "disqus-react";
 
@@ -33,11 +34,17 @@ const ArticleView = (data) => {
 
   return (
     <>
-      <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
         <Head>
           <title>{article.title}</title>
           <link rel="icon" href="/assets/LOGO.webp" />
         </Head>
+        <nav className="md:flex justify-center">
+          <HeaderArticle listButton={[
+            {text:"Artikel", linkUrl: "/artikel"},
+            {text:"Pengumuman", linkUrl:"/artikel?sect=pengumuman"}
+          ]} setActivePage={()=>{}} activePage={3} />
+        </nav>
+      <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
         <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60">
           <div className="">
             <h1 className="md:text-title text-lg" style={{lineHeight:'inherit'}}>{article.title}</h1>
