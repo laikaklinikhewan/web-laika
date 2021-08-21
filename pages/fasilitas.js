@@ -17,12 +17,12 @@ export default function Facilities() {
     <>
       <Head>
         <title>Fasilitas Klinik</title>
-        <link rel="icon" href="/assets/LOGO.png" />
+        <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
       <PinkNavbar listButton={[{ text: "Fasilitas", linkUrl: "#" }]} />
       <main
         className="bg-white min-h-screen"
-        style={{ backgroundImage: "url(/assets/bck2.png)" }}
+        style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       >
         <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex mb-6">
           <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:h-72 flex-shrink-0">
@@ -81,49 +81,49 @@ export default function Facilities() {
 
 const cards = [
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/usg.jpeg",
+    imgUrl: "/assets/usg.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "USG",
     desc: "Lorem ipsum dolor sit, . Illum iste temporibus, incidunt amet consectetur adipisicing elit molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
   },
   {
-    imgUrl: "/assets/lobi.jpeg",
+    imgUrl: "/assets/lobi.webp",
     alt: "gambar lobi",
     caption: "aaaa",
     descTitle: "Ruang Tunggu",

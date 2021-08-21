@@ -33,7 +33,7 @@ export default function Staff({ doctors, paramedics }) {
     <main>
       <Head>
         <title>Staf Medis Laika</title>
-        <link rel="icon" href="/assets/LOGO.png" />
+        <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
       <div className="min-h-screen w-full bg-staf">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
@@ -47,7 +47,7 @@ export default function Staff({ doctors, paramedics }) {
                     photoUrl={
                       doctor.featuredImage
                         ? doctor.featuredImage.node.mediaItemUrl
-                        : "/assets/doc.png"
+                        : "/assets/doc.webp"
                     }
                     name={doctor.title}
                     desc={doctor.content}
@@ -64,7 +64,7 @@ export default function Staff({ doctors, paramedics }) {
                     photoUrl={
                       paramedic.featuredImage
                         ? paramedic.featuredImage.node.mediaItemUrl
-                        : "/assets/doc.png"
+                        : "/assets/doc.webp"
                     }
                     name={paramedic.title}
                     desc={paramedic.content}

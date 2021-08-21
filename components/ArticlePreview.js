@@ -10,8 +10,9 @@ const ArticlePreview = ({ imgUrl, title, date, slug }) => {
           <div className="relative w-full h-36">
             <img
               className="w-full h-full object-cover"
+              loading="lazy"
               src={
-                imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.jpg"
+                imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.webp"
               }
               alt="Article Image"
             />

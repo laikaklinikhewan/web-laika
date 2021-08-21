@@ -62,7 +62,7 @@ const HomeArticles = ({ articles, announcements }) => {
   return (
     <section
       className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain min-h-screen"
-      style={{ backgroundImage: "url(/assets/bck2.png)" }}
+      style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       id="artikel"
     >
       <PreviewList href="/artikel" category="Artikel" list={articles} />
