@@ -18,7 +18,7 @@ const ArticlePreview2 = ({
           } flex relative transform hover:scale-105 transition`}
         >
           <div className='sm:h-preview h-auto w-preview overflow-hidden items-center'>
-            <img src={imageUrl} alt="" height={120} width={192} layout="absolute" />
+            <img src={imageUrl} alt="" height={120} width={192} layout="absolute" loading="lazy"/>
           </div>
           
           <div className="sm:border-b-2 w-dividerArt sm:ml-8 ml-3">

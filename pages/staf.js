@@ -14,8 +14,7 @@ const StaffListItem = ({ photoUrl, name, desc }) => {
         <p className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-xl md:text-2xl lg:text-3xl font-bold underline">
           {name}
         </p>
-        <p className="mx-auto text-md md:text-lg lg:text-2xl text-justify font-light tracking-tight">
-          {desc}
+        <p className="mx-auto text-md md:text-lg lg:text-2xl text-justify font-light tracking-tight" dangerouslySetInnerHTML={{__html: desc}}>
         </p>
       </div>
     </div>
@@ -39,6 +38,7 @@ export default function Staff({ doctors, paramedics }) {
       <div className="min-h-screen w-full bg-staf">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
         <div>
+          <span className='bg-red-600 text-white py-px'><i>*Hubungi kami di: <a href="https://bit.ly/asklaikaklinikhewan"><u>https://bit.ly/asklaikaklinikhewan</u></a> untuk perjanjian dengan dokter</i></span>
           {
             <ul className={activePage === 0 ? "block" : "hidden"}>
               {doctors.map((doctor, index) => (

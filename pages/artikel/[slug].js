@@ -4,10 +4,21 @@ import ISOtoDate from "../../lib/ISOtoDate";
 import Footer from "../../components/Footer";
 import HeaderArticle from "../../components/HeaderArticle";
 import Head from 'next/head'
+import SpotifyButton from "../../components/SpotifyButton";
 import { DiscussionEmbed } from "disqus-react";
 
 
+function isSpotify(mediaEmbed){
+  if (mediaEmbed) {
+    if (mediaEmbed.mediaSource.toLowerCase() === 'spotify'){
+      return true
+    }  
+  }
+  return false
+}
+
 const ArticleView = (data) => {
+  console.log(data.content.oembedJSON ? "exist" : "not exist")
   const articleData = data.content.post;
   let date = ISOtoDate(articleData.date);
   const fixedContent = articleData.content.replace(/(\n\n\n)/gm, "");
@@ -22,6 +33,8 @@ const ArticleView = (data) => {
         : articleData.featuredImage.node.sourceUrl,
     date: date,
     content: fixedContent,
+    mediaEmbed: articleData.mediaEmbed.mediaSource ? articleData.mediaEmbed : null,
+    oembedJSON: data.content.oembedJSON
   };
 
   const disqusShortname = "laikaklinikhewan-pages-dev"
@@ -45,18 +58,24 @@ const ArticleView = (data) => {
           ]} setActivePage={()=>{}} activePage={3} />
         </nav>
       <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
-        <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60">
+        <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60 pb-20">
           <div className="">
-            <h1 className="md:text-title text-lg" style={{lineHeight:'inherit'}}>{article.title}</h1>
-            <p className="mt-2 mb-2 opacity-50 md:text-base text-xs">{article.date}</p>
+            <h1 className="sm:text-title2 lg:text-title text-lg" style={{lineHeight:'inherit'}}>{article.title}</h1>
+            <p className="mt-2 mb-2 opacity-50 lg:text-base sm:text-sm text-xs">{article.date}</p>
           </div>
           <div>
             <img src={article.imageUrl} alt="" height="540" width="960" />
           </div>
           <div
-            className="mt-8 text-justify md:mb-8 md:text-content text-sm whitespace-pre-line"
+            className="mt-8 text-justify md:text-content text-sm whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: article.content }}
           ></div>
+            {article.oembedJSON && (
+            <div className="oembed" dangerouslySetInnerHTML={{__html: article.oembedJSON.html}}></div>
+            )}
+            { isSpotify(article.mediaEmbed)
+              && (<SpotifyButton spotifyUrl={article.mediaEmbed.mediaUrl}/>)
+            }
         </div>
         <DiscussionEmbed        
           shortname= {disqusShortname}
@@ -70,6 +89,7 @@ const ArticleView = (data) => {
 
 export async function getStaticProps(context) {
   let content = await getOnePageContent(context);
+  
   return {
     props: {
       content,

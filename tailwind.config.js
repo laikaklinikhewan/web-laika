@@ -5,7 +5,8 @@ module.exports = {
     borderColor: theme => ({
       ...theme('colors'),
       DEFAULT: theme('colors.gray.300', 'currentColor'),
-      'article': '#C600A6'
+      'article': '#C600A6',
+      'spotify': '#1DB954'
     }),
     extend: {
       backgroundImage: theme => ({
@@ -16,7 +17,8 @@ module.exports = {
         ...theme('colors'),
         'button': '#FFE4B1',
         'staf':'#FFEAEA',
-        'comment':'#FFE9E9'
+        'comment':'#FFE9E9',
+        'spotify':'#1ED760'
       }),
       backgroundSize: {
         'screen': '100vw',
@@ -26,9 +28,11 @@ module.exports = {
         base:['18px'],
         sm:['14px'],
         tn:['10px'],
+        spotify:['11px'],
         button:['24px'],
         title:['56px'],
-        content:['18px']
+        content:['18px'],
+        title2:['40px']
       },
       textColor:{
         'media':'#c0c0c0',
@@ -75,11 +79,13 @@ module.exports = {
         xnav: '8.119vw',
         ynav: '22px',
         xnavmin: '7vw',
-        xmenu: '139.68px'
+        xmenu: '139.68px',
+        spotify: '-0.075rem'
       },
       padding: {
         button: '13px',
-        tbutton: '11px'
+        tbutton: '11px',
+        oembed: '56.25%'
       },
       inset: {
         'tight': '65%',
