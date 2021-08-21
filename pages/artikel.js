@@ -9,9 +9,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 
-const ArticleMore = (data) => {
+const ArticleMore = ({posts}) => {
     const { query } = useRouter()
-    const listPosts = data.posts.posts.nodes
+    const listPosts = posts
     let listArticles = []
     let listAnnouncements = []
     listPosts.map((post) =>{
@@ -32,7 +32,7 @@ const ArticleMore = (data) => {
         <>
             <Head>
                 <title>Artikel & Pengumuman</title>
-                <link rel="icon" href="/assets/LOGO.png" />
+                <link rel="icon" href="/assets/LOGO.webp" />
             </Head>
             <div className='h-full w-full min-h-screen bg-article flex flex-col sm:items-center'>
                 <HeaderArticle listButton={buttonArticle} activePage={activePage} setActivePage={setActivePage}/>
@@ -42,7 +42,7 @@ const ArticleMore = (data) => {
                             <ArticlePreview2
                                 title={article.title}
                                 linkUrl={`/artikel/${article.slug}`}
-                                imageUrl={`${article.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.jpg" : article.featuredImage.node.sourceUrl}`}
+                                imageUrl={`${article.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.webp" : article.featuredImage.node.sourceUrl}`}
                                 date={ISOtoDate(article.date)}
                                 isLast={index === listArticles.length-1}
                                 isFirst={index === 0}
@@ -56,7 +56,7 @@ const ArticleMore = (data) => {
                             <ArticlePreview2
                                 title={announcement.title}
                                 linkUrl={`/artikel/${announcement.slug}`}
-                                imageUrl={`${announcement.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.jpg" : announcement.featuredImage.node.sourceUrl}`}
+                                imageUrl={`${announcement.featuredImage == null ? "/assets/two-dogs-playing-tug-of-war-with-disc.webp" : announcement.featuredImage.node.sourceUrl}`}
                                 date={ISOtoDate(announcement.date)}
                                 isLast={index === listAnnouncements.length-1}
                                 isFirst={index === 0}

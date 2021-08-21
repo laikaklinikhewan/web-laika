@@ -10,7 +10,7 @@ const HeaderArticleButton = ({text, linkUrl, isActive, onClickFuction, isLast}) 
                 ${isLast 
                 ? "" 
                 : "border-r-2 border-article"} 
-                flex sm:ml-16 sm:mt-16 ml-10 mt-20 h-6 w-16 sm:h-9 sm:w-24 items-center sm:text-sm lg:text-base text-xs`} onClick={onClickFuction}>{text}</a>
+                flex sm:ml-16 sm:mt-16 ml-10 mt-20 h-6 w-16 sm:h-9 sm:w-24 items-center text-base text-xs`} onClick={onClickFuction}>{text}</a>
         </Link>
     )
 }
