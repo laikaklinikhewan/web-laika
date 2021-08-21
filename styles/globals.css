@@ -53,3 +53,17 @@ a {
   opacity: 0.85;
   padding: 25px 25px 25px 25px;
 }
+
+.oembed {
+  position: relative;
+  padding-bottom: 50%; /* 16:9 */
+  height: 0;
+}
+
+.oembed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 79%;
+}
