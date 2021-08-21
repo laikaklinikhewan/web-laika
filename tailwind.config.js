@@ -28,7 +28,8 @@ module.exports = {
         tn:['10px'],
         button:['24px'],
         title:['56px'],
-        content:['18px']
+        content:['18px'],
+        title2:['40px']
       },
       textColor:{
         'media':'#c0c0c0',
@@ -79,7 +80,8 @@ module.exports = {
       },
       padding: {
         button: '13px',
-        tbutton: '11px'
+        tbutton: '11px',
+        oembed: '56.25%'
       },
       inset: {
         'tight': '65%',
