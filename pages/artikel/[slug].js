@@ -46,18 +46,18 @@ const ArticleView = (data) => {
   }
 
   return (
-    <>
-        <Head>
-          <title>{article.title}</title>
-          <link rel="icon" href="/assets/LOGO.webp" />
-        </Head>
-        <nav className="md:flex justify-center">
-          <HeaderArticle listButton={[
-            {text:"Artikel", linkUrl: "/artikel"},
-            {text:"Pengumuman", linkUrl:"/artikel?sect=pengumuman"}
-          ]} setActivePage={()=>{}} activePage={3} />
-        </nav>
-      <div className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
+    <html>
+      <Head>
+        <title>{article.title}</title>
+        <link rel="icon" href="/assets/LOGO.webp" />
+      </Head>
+      <nav className="md:flex justify-center">
+        <HeaderArticle listButton={[
+          {text:"Artikel", linkUrl: "/artikel"},
+          {text:"Pengumuman", linkUrl:"/artikel?sect=pengumuman"}
+        ]} setActivePage={()=>{}} activePage={3} />
+      </nav>
+      <main className="flex h-full min-h-screen w-full bg-article flex-col items-center pb-10">
         <div className="md:w-viewArt w-10/12 md:mt-28 mt-10 bg-white bg-opacity-60 pb-20">
           <div className="">
             <h1 className="sm:text-title2 lg:text-title text-lg" style={{lineHeight:'inherit'}}>{article.title}</h1>
@@ -66,10 +66,10 @@ const ArticleView = (data) => {
           <div>
             <img src={article.imageUrl} alt="" height="540" width="960" />
           </div>
-          <div
+          <article
             className="mt-8 text-justify md:text-content text-sm whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: article.content }}
-          ></div>
+          ></article>
             {article.oembedJSON && (
             <div className="oembed" dangerouslySetInnerHTML={{__html: article.oembedJSON.html}}></div>
             )}
@@ -81,9 +81,9 @@ const ArticleView = (data) => {
           shortname= {disqusShortname}
           config={disqusConfig}
         />
-      </div>
+      </main>
       <Footer />
-    </>
+    </html>
   );
 };
 

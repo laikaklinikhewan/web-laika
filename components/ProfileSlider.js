@@ -7,7 +7,7 @@ SwiperCore.use([Pagination, Navigation]);
 const sliderImages = [
   { imgUrl: "/assets/lobi.webp", alt: "gambar lobi" },
   { imgUrl: "/assets/usg.webp", alt: "gambar alat usg" },
-  { imgUrl: "/assets/ruangklinik.webp", alt: "ruangan klinik" },
+  { imgUrl: "/assets/laika.webp", alt: "event" },
 ];
 
 const ProfileSlider = () => {
