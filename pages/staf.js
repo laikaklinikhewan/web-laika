@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import { getStaffs } from "../lib/wordpress";
 import Head from 'next/head'
 
-const StaffListItem = ({ photoUrl, name, desc }) => {
+const StaffListItem = ({ photoUrl, name, desc, practice }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start py-10 md:px-16 lg:px-32">
+    <div className={`flex flex-col md:flex-row items-center md:items-start py-10 md:mx-16 lg:mx-40 xl:px-28 md:px-10 lg:px-16 bg-staf border-8 mb-5 border-lightPink border-dashed rounded-lg`}>
       <div className="relative w-photo h-photo flex-shrink-0">
         <img className="w-full h-full object-cover" src={photoUrl} alt="" />
       </div>
@@ -14,7 +14,12 @@ const StaffListItem = ({ photoUrl, name, desc }) => {
         <p className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-xl md:text-2xl lg:text-3xl font-bold underline">
           {name}
         </p>
-        <p className="mx-auto text-md md:text-lg lg:text-2xl text-justify font-light tracking-tight" dangerouslySetInnerHTML={{__html: desc}}>
+        { practice && 
+          (<p className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-md md:text-lg lg:text-2xl opacity-70">
+              {`~${practice}~`}
+          </p>)
+        }
+        <p className="mx-auto text-md md:text-lg lg:text-xl text-justify font-light tracking-tight" dangerouslySetInnerHTML={{__html: desc}}>
         </p>
       </div>
     </div>
@@ -35,10 +40,10 @@ export default function Staff({ doctors, paramedics }) {
         <title>Staf Medis Laika</title>
         <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
-      <div className="min-h-screen w-full bg-staf">
+      <div className="min-h-screen w-full bg-article pb-32">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
+        <div className='bg-red-600 text-white px-2 py-px'><i>*Hubungi kami di: <a href="https://bit.ly/asklaikaklinikhewan"><u>https://bit.ly/asklaikaklinikhewan</u></a> untuk perjanjian dengan dokter</i></div>
         <div>
-          <span className='bg-red-600 text-white py-px'><i>*Hubungi kami di: <a href="https://bit.ly/asklaikaklinikhewan"><u>https://bit.ly/asklaikaklinikhewan</u></a> untuk perjanjian dengan dokter</i></span>
           {
             <ul className={activePage === 0 ? "block" : "hidden"}>
               {doctors.map((doctor, index) => (
@@ -51,6 +56,8 @@ export default function Staff({ doctors, paramedics }) {
                     }
                     name={doctor.title}
                     desc={doctor.content}
+                    practice={doctor.practice.practice}
+                    isFirst={index == 0 }
                   />
                 </li>
               ))}

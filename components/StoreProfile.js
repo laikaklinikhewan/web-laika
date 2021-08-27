@@ -13,7 +13,7 @@ const StoreProfile = () => {
         <ProfileSlider />
       </div>
       <div className="px-10 lg:px-24 py-12">
-        <h1 className="text-4xl font-bold mb-4">Profil</h1>
+        <h1 className="text-4xl mb-4 londrina text-purp">Profil</h1>
         <p className="md:ml-8 lg:ml-12 md:w-1/2 text-justify">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore odit
           quas obcaecati hic laborum quidem, dolor quos unde, aliquid error modi

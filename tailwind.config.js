@@ -6,7 +6,8 @@ module.exports = {
       ...theme('colors'),
       DEFAULT: theme('colors.gray.300', 'currentColor'),
       'article': '#C600A6',
-      'spotify': '#1DB954'
+      'spotify': '#1DB954',
+      'lightPink': '#FFBDD8'
     }),
     extend: {
       backgroundImage: theme => ({
@@ -18,7 +19,8 @@ module.exports = {
         'button': '#FFE4B1',
         'staf':'#FFEAEA',
         'comment':'#FFE9E9',
-        'spotify':'#1ED760'
+        'spotify':'#1ED760',
+        'lightPink': '#FFBDD8'
       }),
       backgroundSize: {
         'screen': '100vw',
@@ -36,7 +38,8 @@ module.exports = {
       },
       textColor:{
         'media':'#c0c0c0',
-        'mediaHover': '#8e1e74'
+        'mediaHover': '#8e1e74',
+        'purp': '#c8217b'
       },
       boxShadow: {
         'roundBtn': 'inset 0px 6px 2px rgba(0, 0, 0, 0.3);'
@@ -54,7 +57,7 @@ module.exports = {
         mailt: '15px',
         button: '54px',
         '38': '9.5rem',
-        photo: '240px',
+        photo: '260px',
         cover: '100vw',
         preview: '120px'
       },
@@ -66,7 +69,7 @@ module.exports = {
         mailt: '15px',
         button: '166px',
         tbutton: '140px',
-        photo: '180px',
+        photo: '195px',
         artNav: '85vw',
         artPrev: '70vw',
         dividerArt: '75%',
