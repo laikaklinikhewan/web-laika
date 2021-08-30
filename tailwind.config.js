@@ -76,7 +76,8 @@ module.exports = {
         viewArt: '60%',
         commentArt: '80vw',
         oneComment: '80%',
-        preview:'192px'
+        preview:'192px',
+        160: '40rem'
       },
       margin: {
         xnav: '8.119vw',
