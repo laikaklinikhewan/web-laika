@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import FacilityCard from "../components/FacilityCard";
 import Footer from "../components/Footer";
 import PinkNavbar from "../components/PinkNavbar";
-import Head from 'next/head'
+import Head from "next/head";
 
 SwiperCore.use(Navigation);
 
@@ -24,8 +24,8 @@ export default function Facilities() {
         className="bg-white min-h-screen"
         style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       >
-        <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex mb-6">
-          <div className="relative w-full lg:w-5/12 h-60 md:h-96 lg:h-72 flex-shrink-0">
+        <div className="py-10 md:py-20 px-4 lg:px-20 lg:flex items-center mb-6">
+          <div className="relative w-full lg:w-160 aspect-16-9 flex-shrink-0">
             <img
               className="w-full h-full object-cover"
               src={activeCard.imgUrl}
@@ -85,62 +85,62 @@ const cards = [
     alt: "gambar lobi",
     caption: "R. Tunggu",
     descTitle: "Ruang Tunggu",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Kami menyediakan ruang tunggu yang baik untuk memastikan kenyamanan anda dan peliharaan anda dalam segala tahap dari proses berobat.",
   },
   {
     imgUrl: "/assets/fasilitas/rkonsul.webp",
     alt: "ruang konsultasi",
     caption: "R. Konsultasi",
     descTitle: "Ruang Konsultasi",
-    desc: "Lorem ipsum dolor sit, . Illum iste temporibus, incidunt amet consectetur adipisicing elit molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Ruang konsultasi yang akan menjadi tempat kami menyelesaikan semua kekhawatiran anda dan peliharaan anda.",
   },
   {
     imgUrl: "/assets/fasilitas/petshop.webp",
     alt: "Pet Shop",
     caption: "Pet Shop",
     descTitle: "Pet Shop",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Kami juga menyediakan pet shop untuk berbagai macam keperluan anda karena peliharaan tidak hanya perlu sehat, tapi juga bahagia.",
   },
   {
     imgUrl: "/assets/fasilitas/grooming.webp",
     alt: "R. Grooming",
     caption: "R. Grooming",
     descTitle: "Ruang Grooming",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Fasilitas ruang grooming yang kami sediakan akan memastikan peliharaan kesayangan anda berada dalam kondisi bersih dan tanpa masalah kulit ataupun bulu.",
   },
   {
     imgUrl: "/assets/fasilitas/usg.webp",
     alt: "USG",
     caption: "USG",
     descTitle: "USG",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Kami menyediakan fasilitas USG untuk memastikan kami dapat memeriksa peliharaan anda dengan baik apabila diperlukan.",
   },
   {
     imgUrl: "/assets/fasilitas/rawatinap.webp",
     alt: "rawat inap",
     caption: "Rawat Inap",
     descTitle: "Rawat Inap",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Fasilitas rawat inap kami akan membuat anda tenang baik untuk berpergian keluar kota maupun untuk perawatan lebih intensif di Klinik Hewan Laika.",
   },
   {
     imgUrl: "/assets/fasilitas/lab.webp",
     alt: "laboratorium",
     caption: "Laboratorium",
     descTitle: "Laboratorium",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Laboratorium dengan peralatan yang lengkap membuat kami mampu memberikan diagnosis yang akurat dan melakukan tindakan yang tepat.",
   },
   {
     imgUrl: "/assets/fasilitas/xray.webp",
     alt: "alat x-ray",
     caption: "X-Ray",
     descTitle: "X-Ray",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "X-Ray yang kami sediakan membuat kami mampu melihat informasi penting mengenai tubuh peliharaan anda seperti kesehatan tulang, dan mendukung kami dalam perawatan peliharaan anda.",
   },
   {
     imgUrl: "/assets/fasilitas/roperasi.webp",
     alt: "ruang operasi",
     caption: "R. Operasi",
     descTitle: "Ruang Operasi",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum iste temporibus, incidunt molestias ullam repudiandae, consequatur quam molestiae quibusdam totam maxime error expedita asperiores harum fuga voluptatibus nesciunt sit eveniet in? Temporibus mollitia necessitatibus saepe soluta eum esse, dicta tenetur dolores numquam quo iure in minima, debitis officiis ipsam voluptatum.",
+    desc: "Ruang operasi kami memiliki standar yang tinggi untuk mendukung kami dalam melakukan operasi dengan baik, agar peliharaan anda dapat kembali sehat dan bahagia. ",
   },
 ];
