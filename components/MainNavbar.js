@@ -101,7 +101,7 @@ const MainNavbar = () => {
                   height="23px"
                 />
               </div>
-              laikaklinikhewan
+              <div className='self-end'>laikaklinikhewan</div> 
             </a>
             <a
               className="flex self-center"
@@ -115,7 +115,7 @@ const MainNavbar = () => {
                   height="23px"
                 />
               </div>
-              bit.ly/asklaikaklinikhewan
+              <div className='self-end'>bit.ly/asklaikaklinikhewan</div>
             </a>
             <a
               className="flex self-center"
@@ -129,7 +129,7 @@ const MainNavbar = () => {
                   height="20px"
                 />
               </div>
-              laikaklinikhewan@gmail.com
+              <div className='self-end'>laikaklinikhewan@gmail.com</div>
             </a>
           </nav>
           <nav className="flex flex-row-reverse space-x-10 space-x-reverse mt-ynav items-center lg:text-base text-sm">

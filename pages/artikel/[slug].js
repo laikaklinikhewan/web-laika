@@ -18,7 +18,6 @@ function isSpotify(mediaEmbed){
 }
 
 const ArticleView = (data) => {
-  console.log(data.content.oembedJSON ? "exist" : "not exist")
   const articleData = data.content.post;
   let date = ISOtoDate(articleData.date);
   const fixedContent = articleData.content.replace(/(\n\n\n)/gm, "");
@@ -33,6 +32,7 @@ const ArticleView = (data) => {
         : articleData.featuredImage.node.sourceUrl,
     date: date,
     content: fixedContent,
+    keyword: articleData.keyword.keywords,
     mediaEmbed: articleData.mediaEmbed.mediaSource ? articleData.mediaEmbed : null,
     oembedJSON: data.content.oembedJSON
   };
@@ -46,10 +46,11 @@ const ArticleView = (data) => {
   }
 
   return (
-    <html>
+    <>
       <Head>
         <title>{article.title}</title>
         <link rel="icon" href="/assets/LOGO.webp" />
+        <meta name='keywords' content={`${article.keyword}`}/>
       </Head>
       <nav className="md:flex justify-center">
         <HeaderArticle listButton={[
@@ -71,7 +72,7 @@ const ArticleView = (data) => {
             dangerouslySetInnerHTML={{ __html: article.content }}
           ></article>
             {article.oembedJSON && (
-            <div className="oembed" dangerouslySetInnerHTML={{__html: article.oembedJSON.html}}></div>
+            <section className="oembed" dangerouslySetInnerHTML={{__html: article.oembedJSON.html}}></section>
             )}
             { isSpotify(article.mediaEmbed)
               && (<SpotifyButton spotifyUrl={article.mediaEmbed.mediaUrl}/>)
@@ -83,7 +84,7 @@ const ArticleView = (data) => {
         />
       </main>
       <Footer />
-    </html>
+    </>
   );
 };
 
