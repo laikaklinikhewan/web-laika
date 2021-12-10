@@ -1,8 +1,53 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
+import { buildUrl } from "react-instafeed";
+import Image from "next/image";
 import ArticlePreview from "./ArticlePreview";
 import Link from "next/link";
 import ISOtoDate from "../lib/ISOtoDate";
+
+const options = {
+  accessToken:
+    "IGQVJYdV9nZAVg1YkZAKTlpKQnVja0cxWHFWNWFLNzAwYmtodFE3V1NSdjZAZAQkplZAkFsVFpWam9laVNDNEdHeVRZARGlKQ2tkUkFxQmhXdnFMQUJfZAElRakl3UThxTzZADZAV94cHpLS1VxRGxGZAkJWSHBLdQZDZD",
+  locationId: null,
+  get: "user",
+  resolution: "standard_resolution",
+  tagName: null,
+  userId: 108391531688984,
+};
+
+async function Instagram() {
+  let datafetch = buildUrl(options);
+  console.log("test", datafetch);
+  const { json, loading, error, abort } = datafetch;
+  if (loading) return "Loading...";
+  if (error) return `Error: ${error}`;
+  if (!json) return null;
+
+  const { data, meta, pagination } = json;
+
+  return (
+    <Fragment>
+      {
+        // eslint-disable-next-line no-unused-vars
+        data &&
+          data.map(({ caption, id, images, tags }, index) => {
+            const image = images[options.resolution];
+            return (
+              <Image
+                alt="igfeed"
+                key={index}
+                url={image.url}
+                title={caption.text}
+                caption={caption.text}
+                width={image.width}
+                height={image.height}
+              />
+            );
+          })
+      }
+    </Fragment>
+  );
+}
 
 const PreviewList = ({ href, category, list }) => {
   const arrow = (
@@ -27,12 +72,14 @@ const PreviewList = ({ href, category, list }) => {
       />
     </svg>
   );
+
   return (
     <div className="mt-24">
       <h2 className="text-2xl text-pink-500 font-bold mb-2 text-center md:text-left">
         {category}
       </h2>
-      <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
+      <Instagram />
+      {/* <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
         {list.map((listItem, index) => (
           <li key={index} className="transform hover:scale-105 transition">
             <ArticlePreview
@@ -53,7 +100,7 @@ const PreviewList = ({ href, category, list }) => {
             <p className="text-sm text-center">Lainnya</p>
           </a>
         </Link>
-      </ul>
+      </ul> */}
     </div>
   );
 };
@@ -65,12 +112,9 @@ const HomeArticles = ({ articles, announcements }) => {
       style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       id="artikel"
     >
-      <PreviewList href="/artikel" category="Artikel" list={articles} />
-      <PreviewList href="/artikel?sect=pengumuman" category="Pengumuman" list={announcements} />
+      <PreviewList href="/artikel" category="Instagram Feed" list={articles} />
     </section>
   );
 };
-
-HomeArticles.propTypes = {};
 
 export default HomeArticles;
