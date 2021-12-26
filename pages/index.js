@@ -5,7 +5,7 @@ import JamPraktek from "../components/JamPraktek";
 import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
 import { getHomepagePreviews } from "../lib/wordpress";
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Home({ articles, announcements }) {
   return (

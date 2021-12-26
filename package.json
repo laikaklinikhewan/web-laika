@@ -16,12 +16,14 @@
     "react-instafeed": "^1.0.0",
     "react-lazyload": "^3.2.0",
     "sass": "^1.37.5",
-    "swiper": "^6.8.1"
+    "swiper": "^6.8.1",
+    "swr": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "html-webpack-cdn-plugin": "^0.2.0",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }

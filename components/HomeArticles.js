@@ -1,53 +1,19 @@
-import React, { Fragment } from "react";
-import { buildUrl } from "react-instafeed";
-import Image from "next/image";
-import ArticlePreview from "./ArticlePreview";
-import Link from "next/link";
-import ISOtoDate from "../lib/ISOtoDate";
+import React from "react";
+import { igFeedHandler } from "../pages/api/instagram/igFeedHandler";
 
-const options = {
-  accessToken:
-    "IGQVJYdV9nZAVg1YkZAKTlpKQnVja0cxWHFWNWFLNzAwYmtodFE3V1NSdjZAZAQkplZAkFsVFpWam9laVNDNEdHeVRZARGlKQ2tkUkFxQmhXdnFMQUJfZAElRakl3UThxTzZADZAV94cHpLS1VxRGxGZAkJWSHBLdQZDZD",
-  locationId: null,
-  get: "user",
-  resolution: "standard_resolution",
-  tagName: null,
-  userId: 108391531688984,
+const renderInsta = async () => {
+  const data = await igFeedHandler();
+  return data;
 };
 
-async function Instagram() {
-  let datafetch = buildUrl(options);
-  console.log("test", datafetch);
-  const { json, loading, error, abort } = datafetch;
-  if (loading) return "Loading...";
-  if (error) return `Error: ${error}`;
-  if (!json) return null;
-
-  const { data, meta, pagination } = json;
-
-  return (
-    <Fragment>
-      {
-        // eslint-disable-next-line no-unused-vars
-        data &&
-          data.map(({ caption, id, images, tags }, index) => {
-            const image = images[options.resolution];
-            return (
-              <Image
-                alt="igfeed"
-                key={index}
-                url={image.url}
-                title={caption.text}
-                caption={caption.text}
-                width={image.width}
-                height={image.height}
-              />
-            );
-          })
-      }
-    </Fragment>
-  );
-}
+// const Instagram = () => {
+//   <script
+//     async
+//     src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"
+//   >
+//     {renderInsta()}
+//   </script>;
+// };
 
 const PreviewList = ({ href, category, list }) => {
   const arrow = (
@@ -75,10 +41,11 @@ const PreviewList = ({ href, category, list }) => {
 
   return (
     <div className="mt-24">
+      <div>{renderInsta()}</div>
       <h2 className="text-2xl text-pink-500 font-bold mb-2 text-center md:text-left">
         {category}
       </h2>
-      <Instagram />
+      <div id="instafeed-container"></div>
       {/* <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
         {list.map((listItem, index) => (
           <li key={index} className="transform hover:scale-105 transition">
