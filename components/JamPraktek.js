@@ -17,15 +17,18 @@ const JamPraktek = (props) => {
         style={{ backgroundImage: "url(/assets/lobi.webp)" }}
       ></div>
       <div className="flex flex-col justify-center relative z-10 ml-24 mt-60 h-full w-1/2">
-        <h2 className="londrina font-black text-6xl text-white mb-12 text-outline textOutlineThick">
+        <h2 className="londrina font-black text-3xl sm:text-6xl text-white mb-12 text-outline textOutlineThick">
           Jam Praktek
         </h2>
-        <ul className="text-white text-3xl paw-list">
+        <ul className="text-white text-xl sm:text-3xl paw-list">
           {jamPraktek.map((jadwal, idx) => (
             <li key={idx} className="mb-4">
               <p className="font-bold textOutline">{jadwal.hari}</p>
               {jadwal.jam.map((jam, idx2) => (
-                <p key={idx2} className="font-light">
+                <p
+                  key={idx2}
+                  className="sm:font-light text-black sm:text-white"
+                >
                   {jam}
                 </p>
               ))}

@@ -2,27 +2,19 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-const ArticlePreview = ({ imgUrl, title, date, slug }) => {
+const ArticlePreview = ({ imgUrl, date, slug }) => {
   return (
-    <Link href={slug ? `/artikel/${slug}` : "#"}>
+    <Link href={slug}>
       <a className="mt-4">
         <div className="w-52 text-justify text-sm">
-          <div className="relative w-full h-36">
+          <div className="relative w-full h-52">
             <img
               className="w-full h-full object-cover"
               loading="lazy"
-              src={
-                imgUrl || "/assets/two-dogs-playing-tug-of-war-with-disc.webp"
-              }
+              src={imgUrl}
               alt="Article Image"
             />
           </div>
-          <p className="text-base overflow-hidden overflow-ellipsis whitespace-nowrap">
-            {title || "Lorem ipsum dolor sit amet consectetur adipisicing."}
-          </p>
-          <p className="text-md text-gray-500 mt-1">
-            {date || "Lorem ipsum dolor sit amet."}
-          </p>
         </div>
       </a>
     </Link>
