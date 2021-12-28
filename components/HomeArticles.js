@@ -1,19 +1,6 @@
 import React from "react";
-import { igFeedHandler } from "../pages/api/instagram/igFeedHandler";
-
-const renderInsta = async () => {
-  const data = await igFeedHandler();
-  return data;
-};
-
-// const Instagram = () => {
-//   <script
-//     async
-//     src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"
-//   >
-//     {renderInsta()}
-//   </script>;
-// };
+import Link from "next/dist/client/link";
+import ArticlePreview from "./ArticlePreview";
 
 const PreviewList = ({ href, category, list }) => {
   const arrow = (
@@ -41,45 +28,54 @@ const PreviewList = ({ href, category, list }) => {
 
   return (
     <div className="mt-24">
-      <div>{renderInsta()}</div>
       <h2 className="text-2xl text-pink-500 font-bold mb-2 text-center md:text-left">
         {category}
       </h2>
-      <div id="instafeed-container"></div>
-      {/* <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
-        {list.map((listItem, index) => (
-          <li key={index} className="transform hover:scale-105 transition">
-            <ArticlePreview
-              title={listItem.title}
-              date={ISOtoDate(listItem.date)}
-              slug={listItem.slug}
-              imgUrl={
-                listItem.featuredImage
-                  ? listItem.featuredImage.node.mediaItemUrl
-                  : undefined
-              }
-            ></ArticlePreview>
-          </li>
+      <ul className="relative flex items-center flex-wrap flex-col lg:items-start md:flex-row">
+        {list.map((listLevel, indexLevel) => (
+          <div
+            key={indexLevel}
+            className="relative w-full flex-wrap items-center flex flex-col lg:items-start md:flex-row justify-between xs:mb-6"
+          >
+            {listLevel.map((listItem, idxItem) => (
+              <li
+                key={4 * indexLevel + idxItem}
+                className="mt-6 transform hover:scale-105 transition"
+              >
+                <ArticlePreview
+                  slug={listItem.permalink}
+                  imgUrl={listItem.media_url}
+                ></ArticlePreview>
+              </li>
+            ))}
+          </div>
         ))}
         <Link href={href}>
-          <a className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
+          <a
+            className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300"
+            target="_blank"
+          >
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
           </a>
         </Link>
-      </ul> */}
+      </ul>
     </div>
   );
 };
 
-const HomeArticles = ({ articles, announcements }) => {
+const HomeArticles = ({ articles }) => {
   return (
     <section
       className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain min-h-screen"
       style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       id="artikel"
     >
-      <PreviewList href="/artikel" category="Instagram Feed" list={articles} />
+      <PreviewList
+        href="https://www.instagram.com/laikaklinikhewan/"
+        category="Articles"
+        list={articles}
+      />
     </section>
   );
 };

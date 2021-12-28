@@ -134,7 +134,6 @@ export default function Staff({ doctors, paramedics }) {
               }
             >
               {testparamedis.map((paramedic, index) => {
-                console.log(index % 3);
                 return (
                   <div key={index}>
                     <ParamedicListitem

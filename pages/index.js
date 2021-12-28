@@ -4,7 +4,7 @@ import InfoKlinik from "../components/InfoKlinik";
 import JamPraktek from "../components/JamPraktek";
 import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
-import { getHomepagePreviews } from "../lib/wordpress";
+import { igFeedHandler } from "./api/instagram/igFeedHandler";
 import Head from "next/head";
 
 export default function Home({ articles, announcements }) {
@@ -18,15 +18,23 @@ export default function Home({ articles, announcements }) {
       <IndexHero />
       <InfoKlinik />
       <JamPraktek />
-      <HomeArticles articles={articles} announcements={announcements} />
+      <HomeArticles articles={articles} />
       <Footer />
     </>
   );
 }
 
 export async function getStaticProps() {
-  let [articles, announcements] = await getHomepagePreviews();
+  let articles = await igFeedHandler();
+  let shownArticles = [];
+  for (let line = 0; line < 2; line++) {
+    let lineitems = [];
+    for (let idxitem = 0 + line * 4; idxitem < 4 + line * 4; idxitem++) {
+      lineitems.push(articles[idxitem]);
+    }
+    shownArticles.push(lineitems);
+  }
   return {
-    props: { articles, announcements },
+    props: { articles: shownArticles },
   };
 }
