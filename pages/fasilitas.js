@@ -130,13 +130,6 @@ const cards = [
     desc: "Laboratorium dengan peralatan yang lengkap membuat kami mampu memberikan diagnosis yang akurat dan melakukan tindakan yang tepat.",
   },
   {
-    imgUrl: "/assets/fasilitas/xray.webp",
-    alt: "alat x-ray",
-    caption: "X-Ray",
-    descTitle: "X-Ray",
-    desc: "X-Ray yang kami sediakan membuat kami mampu melihat informasi penting mengenai tubuh peliharaan anda seperti kesehatan tulang, dan mendukung kami dalam perawatan peliharaan anda.",
-  },
-  {
     imgUrl: "/assets/fasilitas/roperasi.webp",
     alt: "ruang operasi",
     caption: "R. Operasi",

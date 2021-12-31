@@ -36,10 +36,10 @@ const MainNavbar = () => {
   const [activeSect, setActiveSect] = useState(3);
   return (
     <>
-      <div className="sm:hidden flex flex-col fixed bg-white z-50 justify-between h-28 max-w-8xl w-full shadow-lg text-base inline-flex">
-        <nav className="flex space-x-3 text-tn text-media items-center absolute right-6 mt-2">
+      <div className="sm:hidden flex flex-col fixed bg-lightPinkHeader z-50 justify-between h-28 max-w-8xl w-full shadow-lg text-base inline-flex">
+        <nav className="flex  space-x-3 text-tn text-media items-center absolute right-6 mt-2">
           <a
-            className="flex self-center"
+            className="flex self-center opacity-50"
             href="https://www.instagram.com/laikaklinikhewan/"
           >
             <div className="p-0.5 h-ig w-ig">
@@ -52,7 +52,7 @@ const MainNavbar = () => {
             </div>
           </a>
           <a
-            className="flex self-center"
+            className="flex self-center opacity-50"
             href="https://bit.ly/asklaikaklinikhewan"
           >
             <div className="p-0.5 h-ig w-ig">
@@ -65,7 +65,7 @@ const MainNavbar = () => {
             </div>
           </a>
           <a
-            className="flex self-center"
+            className="flex self-center opacity-50"
             href="https://mail.google.com/mail/u/0/?fs=1&to=laikaklinikhewan@gmail.com&tf=cm"
           >
             <div className="">
@@ -79,21 +79,32 @@ const MainNavbar = () => {
           </a>
         </nav>
         <div className="relative min-w-logo min-h-logo ml-10 mt-6">
-          <img src="/assets/LOGO.webp" alt="Laika" height={65} width={65} layout="fill" />
+          <img
+            src="/assets/LOGO.webp"
+            alt="Laika"
+            height={65}
+            width={65}
+            layout="fill"
+          />
         </div>
-
       </div>
-      <div className="sm:flex hidden fixed bg-white z-50 justify-between h-28 max-w-8xl w-screen shadow-lg text-base inline-flex">
+      <div className="sm:flex bg-lightPinkHeader hidden fixed bg-white z-50 justify-between h-28 max-w-8xl w-screen shadow-lg text-base inline-flex">
         <div className="static min-w-logo min-h-logo lg:mx-xnav ml-10 my-ynav">
-          <img src="/assets/LOGO.webp" alt="Laika" height={65} width={65} layout="fill" />
+          <img
+            src="/assets/LOGO.webp"
+            alt="Laika"
+            height={65}
+            width={65}
+            layout="fill"
+          />
         </div>
         <div className="grid lg:mr-xnav mr-xnavmin">
-          <nav className="flex space-x-10 text-tn lg:text-sm text-media items-center">
+          <nav className="flex space-x-10 text-tn lg:text-sm items-center">
             <a
               className="flex self-center"
               href="https://www.instagram.com/laikaklinikhewan/"
             >
-              <div className="lg:p-1 p-0.5 h-igt w-igt lg:h-ig lg:w-ig">
+              <div className="lg:p-1 p-0.5 h-igt w-igt lg:h-ig lg:w-ig opacity-50">
                 <img
                   src="/icons/instagram-head.svg"
                   alt=""
@@ -101,13 +112,13 @@ const MainNavbar = () => {
                   height="23px"
                 />
               </div>
-              <div className='self-end'>laikaklinikhewan</div> 
+              <div className="self-end opacity-50">laikaklinikhewan</div>
             </a>
             <a
               className="flex self-center"
               href="https://bit.ly/asklaikaklinikhewan"
             >
-              <div className="lg:p-1 p-0.5 h-igt w-igt lg:h-ig lg:w-ig">
+              <div className="lg:p-1 p-0.5 h-igt w-igt lg:h-ig lg:w-ig opacity-50">
                 <img
                   src="/icons/whatsapp-head.svg"
                   alt=""
@@ -115,13 +126,15 @@ const MainNavbar = () => {
                   height="23px"
                 />
               </div>
-              <div className='self-end'>bit.ly/asklaikaklinikhewan</div>
+              <div className="self-end opacity-50">
+                bit.ly/asklaikaklinikhewan
+              </div>
             </a>
             <a
               className="flex self-center"
               href="https://mail.google.com/mail/u/0/?fs=1&to=laikaklinikhewan@gmail.com&tf=cm"
             >
-              <div className="lg:h-mail lg:w-mail h-mailt w-mailt">
+              <div className="lg:h-mail lg:w-mail h-mailt w-mailt opacity-50">
                 <img
                   src="/icons/mail-head.svg"
                   alt=""
@@ -129,7 +142,9 @@ const MainNavbar = () => {
                   height="20px"
                 />
               </div>
-              <div className='self-end'>laikaklinikhewan@gmail.com</div>
+              <div className="self-end opacity-50">
+                laikaklinikhewan@gmail.com
+              </div>
             </a>
           </nav>
           <nav className="flex flex-row-reverse space-x-10 space-x-reverse mt-ynav items-center lg:text-base text-sm">

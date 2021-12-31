@@ -54,6 +54,7 @@ const PreviewList = ({ href, category, list }) => {
           <a
             className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300"
             target="_blank"
+            rel="noreferrer"
           >
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
