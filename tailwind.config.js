@@ -38,6 +38,7 @@ module.exports = {
         title2: ["40px"],
       },
       textColor: {
+        softRed: "#ff4d4d",
         media: "#c0c0c0",
         mediaHover: "#8e1e74",
         purp: "#c8217b",

@@ -4,38 +4,7 @@ import Footer from "../components/Footer";
 import { getStaffs } from "../lib/wordpress";
 import Head from "next/head";
 
-const testparamedis = [
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-  {
-    title: "test1",
-    practice: { practice: "testpract" },
-  },
-];
-
-const DoctorListItem = ({ photoUrl, name, desc, practice }) => {
+const DoctorListItem = ({ photoUrl, name, desc, practice, jadwal }) => {
   return (
     <div
       className={`flex flex-col md:flex-row items-center md:items-start py-10 md:mx-16 lg:mx-40 xl:px-28 md:px-10 lg:px-16 bg-staf border-8 mb-5 border-lightPink mt-4 border-dashed rounded-lg`}
@@ -43,10 +12,14 @@ const DoctorListItem = ({ photoUrl, name, desc, practice }) => {
       <div className="relative w-photo h-photo flex-shrink-0">
         <img className="w-full h-full object-cover" src={photoUrl} alt="" />
       </div>
-      <div className="px-10 md:px-0 md:ml-10 mt-6 md:mt-0 max-w-1/2">
-        <p className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-xl md:text-2xl lg:text-3xl font-bold underline">
+      <div className="px-10 md:px-0 md:ml-10 mt-6 md:mt-0 max-w-1/2 flex flex-col lg:inline items-center lg:items-start">
+        <span className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-xl md:text-2xl lg:text-3xl font-bold underline">
           {name}
-        </p>
+        </span>
+        <span className="text-softRed font-bold text-xs md:text-sm">
+          {" "}
+          (Jadwal praktek: {jadwal})
+        </span>
         {practice && (
           <p className="londrina tracking-wide mb-4 md:mb-2 mx-auto text-md md:text-lg lg:text-2xl opacity-70">
             {`~${practice}~`}
@@ -84,8 +57,8 @@ export default function Staff({ doctors, paramedics }) {
   const [activePage, setActivePage] = useState(0);
 
   const pageList = [
-    { text: "Dokter", linkUrl: "#" },
-    { text: "Paramedis", linkUrl: "#" },
+    { text: "Dokter", linkUrl: "#dokter" },
+    { text: "Paramedis", linkUrl: "#paramedis" },
   ];
 
   return (
@@ -94,7 +67,7 @@ export default function Staff({ doctors, paramedics }) {
         <title>Staf Medis Laika</title>
         <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
-      <div className="min-h-screen w-full bg-article pb-32">
+      <div className="min-h-screen w-full bg-article pb-16">
         <PinkNavbar listButton={pageList} setActivePage={setActivePage} />
         <div className="bg-red-600 text-white px-2 py-px">
           <i>
@@ -105,7 +78,7 @@ export default function Staff({ doctors, paramedics }) {
             untuk perjanjian dengan dokter
           </i>
         </div>
-        <div>
+        <div className="mt-10">
           {
             <ul className={activePage === 0 ? "block" : "hidden"}>
               {doctors.map((doctor, index) => (
@@ -119,6 +92,7 @@ export default function Staff({ doctors, paramedics }) {
                     name={doctor.title}
                     desc={doctor.content}
                     practice={doctor.practice.practice}
+                    jadwal={doctor.jadwal.jadwal}
                     isFirst={index == 0}
                   />
                 </li>
@@ -133,7 +107,7 @@ export default function Staff({ doctors, paramedics }) {
                   : "hidden"
               }
             >
-              {testparamedis.map((paramedic, index) => {
+              {paramedics.map((paramedic, index) => {
                 return (
                   <div key={index}>
                     <ParamedicListitem

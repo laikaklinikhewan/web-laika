@@ -6,21 +6,31 @@ import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
 import { igFeedHandler } from "./api/instagram/igFeedHandler";
 import Head from "next/head";
+import scroller from "react-scroll/modules/mixins/scroller";
+import { useEffect, useState } from "react";
 
-export default function Home({ articles, announcements }) {
+export default function Home({ articles }) {
   return (
-    <>
+    <div>
       <Head>
         <title>Laika | Klinik Hewan & Petshop</title>
         <link rel="icon" href="/assets/LOGO.webp" />
       </Head>
       <MainNavbar />
-      <IndexHero />
-      <InfoKlinik />
-      <JamPraktek />
-      <HomeArticles articles={articles} />
+      <section name="0">
+        <IndexHero />
+      </section>
+      <section name="1">
+        <InfoKlinik />
+      </section>
+      <section name="2">
+        <JamPraktek />
+      </section>
+      <section name="3">
+        <HomeArticles articles={articles} />
+      </section>
       <Footer />
-    </>
+    </div>
   );
 }
 
