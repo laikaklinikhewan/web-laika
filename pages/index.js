@@ -6,8 +6,6 @@ import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
 import { igFeedHandler } from "./api/instagram/igFeedHandler";
 import Head from "next/head";
-import scroller from "react-scroll/modules/mixins/scroller";
-import { useEffect, useState } from "react";
 
 export default function Home({ articles }) {
   return (

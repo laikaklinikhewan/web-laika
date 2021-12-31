@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { list } from "postcss";
 
-const JamPraktek = (props) => {
+const JamPraktek = () => {
   const jamPraktek = [
     { hari: "Senin-Jumat", jam: ["10.00-21-00", "10.00-16.00 (Pandemi)"] },
     {
