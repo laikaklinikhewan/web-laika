@@ -9,6 +9,8 @@ const Footer = () => {
           <a
             className="my-auto flex-shrink-0 mr-4"
             href="https://g.page/laikaklinikhewan?share"
+            target="_blank"
+            rel="noreferrer"
           >
             <svg
               fill="none"

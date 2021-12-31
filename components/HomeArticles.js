@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Link from "next/dist/client/link";
 import ArticlePreview from "./ArticlePreview";
-import Link from "next/link";
-import ISOtoDate from "../lib/ISOtoDate";
 
 const PreviewList = ({ href, category, list }) => {
   const arrow = (
@@ -27,28 +25,37 @@ const PreviewList = ({ href, category, list }) => {
       />
     </svg>
   );
+
   return (
     <div className="mt-24">
       <h2 className="text-2xl text-pink-500 font-bold mb-2 text-center md:text-left">
         {category}
       </h2>
-      <ul className="relative flex flex-wrap flex-col items-center lg:items-start md:flex-row justify-between">
-        {list.map((listItem, index) => (
-          <li key={index} className="transform hover:scale-105 transition">
-            <ArticlePreview
-              title={listItem.title}
-              date={ISOtoDate(listItem.date)}
-              slug={listItem.slug}
-              imgUrl={
-                listItem.featuredImage
-                  ? listItem.featuredImage.node.mediaItemUrl
-                  : undefined
-              }
-            ></ArticlePreview>
-          </li>
+      <ul className="relative flex items-center flex-wrap flex-col lg:items-start md:flex-row">
+        {list.map((listLevel, indexLevel) => (
+          <div
+            key={indexLevel}
+            className="relative w-full flex-wrap items-center flex flex-col lg:items-start md:flex-row justify-between xs:mb-6"
+          >
+            {listLevel.map((listItem, idxItem) => (
+              <li
+                key={4 * indexLevel + idxItem}
+                className="mt-6 transform hover:scale-105 transition"
+              >
+                <ArticlePreview
+                  slug={listItem.permalink}
+                  imgUrl={listItem.media_url}
+                ></ArticlePreview>
+              </li>
+            ))}
+          </div>
         ))}
         <Link href={href}>
-          <a className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300">
+          <a
+            className="self-center mt-4 md:my-auto md:absolute -right-16 transform hover:translate-x-4 transition duration-300"
+            target="_blank"
+            rel="noreferrer"
+          >
             {arrow}
             <p className="text-sm text-center">Lainnya</p>
           </a>
@@ -58,19 +65,20 @@ const PreviewList = ({ href, category, list }) => {
   );
 };
 
-const HomeArticles = ({ articles, announcements }) => {
+const HomeArticles = ({ articles }) => {
   return (
     <section
       className="md:px-40 lg:px-52 py-12 bg-red-100 bg-contain min-h-screen"
       style={{ backgroundImage: "url(/assets/bck2.webp)" }}
       id="artikel"
     >
-      <PreviewList href="/artikel" category="Artikel" list={articles} />
-      <PreviewList href="/artikel?sect=pengumuman" category="Pengumuman" list={announcements} />
+      <PreviewList
+        href="https://www.instagram.com/laikaklinikhewan/"
+        category="Articles"
+        list={articles}
+      />
     </section>
   );
 };
-
-HomeArticles.propTypes = {};
 
 export default HomeArticles;

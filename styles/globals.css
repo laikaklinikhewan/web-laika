@@ -67,3 +67,12 @@ a {
   width: 70%;
   height: 79%;
 }
+
+.aspect-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.paramedic-card-size {
+  height: 380px;
+  width: 230px;
+}

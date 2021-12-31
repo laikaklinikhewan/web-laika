@@ -13,14 +13,12 @@ const StoreProfile = () => {
         <ProfileSlider />
       </div>
       <div className="px-10 lg:px-24 py-12">
-        <h1 className="text-4xl font-bold mb-4">Profil</h1>
-        <p className="md:ml-8 lg:ml-12 md:w-1/2 text-justify">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore odit
-          quas obcaecati hic laborum quidem, dolor quos unde, aliquid error modi
-          atque est iure ipsum? Porro mollitia natus quibusdam asperiores cumque
-          tempora facilis repudiandae sapiente ipsa. Libero deleniti laboriosam
-          eveniet maiores esse quam? Eveniet inventore porro sit earum nobis
-          repellat?
+        <h1 className="text-4xl mb-4 londrina text-purp">Profil</h1>
+        <p className="md:ml-8 lg:ml-12 md:w-1/2 text-justify text-xl">
+          Klinik Hewan Laika telah melayani sejak tahun 2016 dan akan terus
+          mengembangkan layanan yang kami miliki untuk kepuasan Pawrents dan
+          kesayangannya. Tak hanya itu, Klinik Hewan Laika juga ikut mengambil
+          peran dalam mengedukasi masyarakat tentang kesehatan hewan.
         </p>
       </div>
     </main>

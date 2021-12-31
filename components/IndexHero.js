@@ -14,7 +14,7 @@ const IndexHero = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-light mt-32">
             Welcome to<br></br>
             <span className="text-3xl md:text-4xl lg:text-5xl inline-block mt-4 italic font-semibold">
-              Laika Petshop and Veterinary Service
+              Laika Petshop and Veterinary Services
             </span>
           </h1>
           <div className="flex mt-4 items-center">
