@@ -5,7 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Pagination, Navigation]);
 
 const sliderImages = [
-  { vidUrl: "/assets/video/PV_1.mp4" },
+  {
+    vidUrl:
+      "https://res.cloudinary.com/laika-klinik-hewan/video/upload/v1641227865/pv12_hexyhk.mp4",
+  },
   { imgUrl: "/assets/lobi.webp", alt: "gambar lobi" },
   { imgUrl: "/assets/usg.webp", alt: "gambar alat usg" },
 ];
