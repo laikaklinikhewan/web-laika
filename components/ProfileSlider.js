@@ -8,7 +8,6 @@ const sliderImages = [
   { vidUrl: "/assets/video/PV_1.mp4" },
   { imgUrl: "/assets/lobi.webp", alt: "gambar lobi" },
   { imgUrl: "/assets/usg.webp", alt: "gambar alat usg" },
-  { imgUrl: "/assets/laika.webp", alt: "event" },
 ];
 
 const onSlideHandler = (entry) => {
