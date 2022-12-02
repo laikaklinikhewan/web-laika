@@ -6,8 +6,28 @@ import HomeArticles from "../components/HomeArticles";
 import Footer from "../components/Footer";
 import { igFeedHandler } from "./api/instagram/igFeedHandler";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 
-export default function Home({ articles }) {
+export default function Home() {
+  const [igPosts, setIgPosts] = useState([])
+
+  useEffect(() => {
+    igFeedHandler()
+    .then((res) => {
+      let articles = res
+      let shownArticles = [];
+      for (let line = 0; line < 2; line++) {
+        let lineitems = [];
+        for (let idxitem = 0 + line * 4; idxitem < 4 + line * 4; idxitem++) {
+          lineitems.push(articles[idxitem]);
+        }
+        shownArticles.push(lineitems);
+      }
+      setIgPosts(shownArticles)
+    })
+    .catch((err) => console.error(err.stack, err.message));
+  },[])
+
   return (
     <div>
       <Head>
@@ -25,24 +45,10 @@ export default function Home({ articles }) {
         <JamPraktek />
       </section>
       <section name="3">
-        <HomeArticles articles={articles} />
+        <HomeArticles articles={igPosts} />
       </section>
       <Footer />
     </div>
   );
 }
 
-export async function getServerSideProps() {
-  let articles = await igFeedHandler();
-  let shownArticles = [];
-  for (let line = 0; line < 2; line++) {
-    let lineitems = [];
-    for (let idxitem = 0 + line * 4; idxitem < 4 + line * 4; idxitem++) {
-      lineitems.push(articles[idxitem]);
-    }
-    shownArticles.push(lineitems);
-  }
-  return {
-    props: { articles: shownArticles },
-  };
-}
