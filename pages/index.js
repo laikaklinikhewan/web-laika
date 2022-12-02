@@ -32,7 +32,7 @@ export default function Home({ articles }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let articles = await igFeedHandler();
   let shownArticles = [];
   for (let line = 0; line < 2; line++) {
