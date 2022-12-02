@@ -3,4 +3,5 @@ module.exports = {
     domains: ["res.cloudinary.com"],
   },
   reactStrictMode: true,
+  distDir: 'out'
 };
