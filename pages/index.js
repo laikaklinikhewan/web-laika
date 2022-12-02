@@ -9,7 +9,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [igPosts, setIgPosts] = useState([])
+  const [igPosts, setIgPosts] = useState(null)
 
   useEffect(() => {
     igFeedHandler()

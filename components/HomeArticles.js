@@ -32,7 +32,7 @@ const PreviewList = ({ href, category, list }) => {
         {category}
       </h2>
       <ul className="relative flex items-center flex-wrap flex-col lg:items-start md:flex-row">
-        {list.map((listLevel, indexLevel) => (
+        {list?.map((listLevel, indexLevel) => (
           <div
             key={indexLevel}
             className="relative w-full flex-wrap items-center flex flex-col lg:items-start md:flex-row justify-between xs:mb-6"
